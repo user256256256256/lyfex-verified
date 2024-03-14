@@ -86,8 +86,8 @@ class AboutUs extends HTMLElement {
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="d-flex flex-column">
-                            <img class="img-fluid rounded w-75 align-self-end" src="img/about-1.jpg" alt="">
-                            <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="img/about-2.jpg" alt="" style="margin-top: -25%;">
+                            <img class="img-fluid rounded w-75 align-self-end" src="img/children-wellness-2.JPG" alt="">
+                            <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="img/familiy-fin-lit-2.JPG" alt="" style="margin-top: -25%;">
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -173,7 +173,7 @@ class WhyUsSection extends HTMLElement {
                 </div>
                 <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/children-wellness-4.JPG" style="object-fit: cover;" alt="">
                     </div>
                 </div>
             </div>
