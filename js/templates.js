@@ -63,7 +63,13 @@ class SiteNav extends HTMLElement {
                             <a href="service-three.html" class="dropdown-item">Financial Literacy</a>
                         </div>
                     </div>
-                    <a href="resources.html" class="nav-item nav-link">Resources</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                            <a href="faqs.html" class="dropdown-item">FAQs</a>
+                            <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        </div>
+                    </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="appointment.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
@@ -91,14 +97,13 @@ class AboutUs extends HTMLElement {
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.html">About Us</a></p>
                         <h1 class="mb-4">Why You Should Trust Us? Get To Know About Us!</h1>
                         <p>We are a dedicated venture that integrates nutrition education for children and expectant mothers with essential financial literacy programs for families. Our goal is to create a harmonious approach to overall well-being by addressing both physical health and financial stability.</p>
                         <p class="mb-4">Through our Integrated Approach to support individuals and families our their journey to live a healthier and happy life we employ a number of prepositions to be the best.</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Experienced and Caring Team</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Commitment to Your Family's Health</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Holistic Wellness Focus</p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
                     </div>
                 </div>
             </div>
@@ -281,7 +286,7 @@ class AppointmentSection extends HTMLElement {
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.html">Appointment</a></p>
                         <h1 class="mb-4">Make An Appointment To Visit Our Specialist</h1>
                         <p class="mb-4">Fill in the information and you will recieve a confimation email if your appointment is confirmed. You can also contact us through our email or call us.</p>
                         <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
@@ -425,24 +430,23 @@ class SiteFooter extends HTMLElement {
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Services</h5>
-                        <a class="btn btn-link" href="">Nutrition Therapy for Moms</a>
-                        <a class="btn btn-link" href="">Children's Wellness Programs</a>
-                        <a class="btn btn-link" href="">Financial Literacy</a>
+                        <a class="btn btn-link" href="service-one.html">Nutrition Therapy for Moms</a>
+                        <a class="btn btn-link" href="service-two.html">Children's Wellness Programs</a>
+                        <a class="btn btn-link" href="service-three.html">Financial Literacy</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Quick Links</h5>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Resources</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Appointment</a>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="resources.html">Resources</a>
+                        <a class="btn btn-link" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link" href="appointment.html">Appointment</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h5 class="text-light mb-4">Newsletter</h5>
-                        <p>Subcribe to our newsletter to recieve news concerning our company.</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="name@email.com">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                        </div>
+                        <h5 class="text-light mb-4">Lyfex-Africa</h5>
+                        <p>Empowering Families and Nourishing Lives</p>
+                        <a href="index.html">
+                            <img class="site-logo " src="img/Picture1.png" alt="site-logo">
+                        </a>
                     </div>
                 </div>
             </div>
