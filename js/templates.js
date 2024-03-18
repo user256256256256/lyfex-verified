@@ -42,7 +42,6 @@ class SiteNav extends HTMLElement {
         </div>
         <!-- Topbar End -->
     
-    
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
             <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -53,8 +52,8 @@ class SiteNav extends HTMLElement {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link ">About</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
@@ -437,7 +436,7 @@ class SiteFooter extends HTMLElement {
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Quick Links</h5>
                         <a class="btn btn-link" href="about.html">About Us</a>
-                        <a class="btn btn-link" href="resources.html">Resources</a>
+                        <a class="btn btn-link" href="blogs.html">Blogs</a>
                         <a class="btn btn-link" href="contact.html">Contact Us</a>
                         <a class="btn btn-link" href="appointment.html">Appointment</a>
                     </div>
@@ -454,7 +453,7 @@ class SiteFooter extends HTMLElement {
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Lyfex Africa</a>, All Right Reserved.
+                            &copy; <a class="border-bottom" href="index.html">Lyfex Africa</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             Designed By <a class="border-bottom" href="https://eurosatgroup.com/" target="_blank">Eurosat Group Of Companies</a>
