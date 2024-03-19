@@ -59,7 +59,7 @@ class SiteNav extends HTMLElement {
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                             <a href="service-one.html" class="dropdown-item">Nutrition Therapy for Moms</a>
                             <a href="service-two.html" class="dropdown-item">Children's Wellness Programs</a>
-                            <a href="service-three.html" class="dropdown-item">Financial Literacy</a>
+                            <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -98,7 +98,7 @@ class AboutUs extends HTMLElement {
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.html">About Us</a></p>
                         <h1 class="mb-4">Why You Should Trust Us? Get To Know About Us!</h1>
-                        <p>We are a dedicated venture that integrates nutrition education for children and expectant mothers with essential financial literacy programs for families. Our goal is to create a harmonious approach to overall well-being by addressing both physical health and financial stability.</p>
+                        <p>We are a dedicated venture that integrates nutrition education for children and expectant mothers with essential NutriFinTrancy programs for families. Our goal is to create a harmonious approach to overall well-being by addressing both physical health and financial stability.</p>
                         <p class="mb-4">Through our Integrated Approach to support individuals and families our their journey to live a healthier and happy life we employ a number of prepositions to be the best.</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Experienced and Caring Team</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Commitment to Your Family's Health</p>
@@ -198,8 +198,8 @@ class OurTeam extends HTMLElement {
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
-                    <h1>Our Experience Doctors</h1>
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Team</p>
+                    <h1>Our Team</h1>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -208,8 +208,8 @@ class OurTeam extends HTMLElement {
                                 <img class="img-fluid" src="img/team-1.jpg" alt="">
                             </div>
                             <div class="team-text bg-light text-center p-4">
-                                <h5>Doctor Name</h5>
-                                <p class="text-primary">Department</p>
+                                <h5>Nanteza Nadia Malker</h5>
+                                <p class="text-primary">Dietitian</p>
                                 <div class="team-social text-center">
                                     <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -224,8 +224,8 @@ class OurTeam extends HTMLElement {
                                 <img class="img-fluid" src="img/team-2.jpg" alt="">
                             </div>
                             <div class="team-text bg-light text-center p-4">
-                                <h5>Doctor Name</h5>
-                                <p class="text-primary">Department</p>
+                                <h5>Alawi Mutebi</h5>
+                                <p class="text-primary">Development Consultant</p>
                                 <div class="team-social text-center">
                                     <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -240,8 +240,8 @@ class OurTeam extends HTMLElement {
                                 <img class="img-fluid" src="img/team-3.jpg" alt="">
                             </div>
                             <div class="team-text bg-light text-center p-4">
-                                <h5>Doctor Name</h5>
-                                <p class="text-primary">Department</p>
+                                <h5>Nanteza Shakira</h5>
+                                <p class="text-primary">Nutritionist</p>
                                 <div class="team-social text-center">
                                     <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -431,7 +431,7 @@ class SiteFooter extends HTMLElement {
                         <h5 class="text-light mb-4">Services</h5>
                         <a class="btn btn-link" href="service-one.html">Nutrition Therapy for Moms</a>
                         <a class="btn btn-link" href="service-two.html">Children's Wellness Programs</a>
-                        <a class="btn btn-link" href="service-three.html">Financial Literacy</a>
+                        <a class="btn btn-link" href="service-three.html">NutriFinTrancy</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Quick Links</h5>
