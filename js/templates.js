@@ -32,10 +32,9 @@ class SiteNav extends HTMLElement {
                         <small>+256 779185563</small>
                     </div>
                     <div class="h-100 d-inline-flex align-items-center">
-                        <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
+                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -201,20 +200,15 @@ class OurTeam extends HTMLElement {
                     <p class="d-inline-block border rounded-pill py-1 px-4">Team</p>
                     <h1>Our Team</h1>
                 </div>
-                <div class="row g-4">
+                <div class="row g-4 team-cards">
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item position-relative rounded overflow-hidden">
                             <div class="overflow-hidden">
                                 <img class="img-fluid" src="img/team-1.jpg" alt="">
                             </div>
                             <div class="team-text bg-light text-center p-4">
-                                <h5>Nanteza Nadia Malker</h5>
-                                <p class="text-primary">Dietitian</p>
-                                <div class="team-social text-center">
-                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
+                                <h5>Mrs. Nanteza Nadia Malker</h5>
+                                <p class="text-primary">Founder & Team Lead. A professional Nutritionist and Dietitian</p>
                             </div>
                         </div>
                     </div>
@@ -224,13 +218,8 @@ class OurTeam extends HTMLElement {
                                 <img class="img-fluid" src="img/team-2.jpg" alt="">
                             </div>
                             <div class="team-text bg-light text-center p-4">
-                                <h5>Alawi Mutebi</h5>
-                                <p class="text-primary">Development Consultant</p>
-                                <div class="team-social text-center">
-                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
+                                <h5>Mr. Alawi Mutebi</h5>
+                                <p class="text-primary">Business Development Consultant</p>
                             </div>
                         </div>
                     </div>
@@ -240,29 +229,8 @@ class OurTeam extends HTMLElement {
                                 <img class="img-fluid" src="img/team-3.jpg" alt="">
                             </div>
                             <div class="team-text bg-light text-center p-4">
-                                <h5>Nanteza Shakira</h5>
-                                <p class="text-primary">Nutritionist</p>
-                                <div class="team-social text-center">
-                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item position-relative rounded overflow-hidden">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            </div>
-                            <div class="team-text bg-light text-center p-4">
-                                <h5>Doctor Name</h5>
-                                <p class="text-primary">Department</p>
-                                <div class="team-social text-center">
-                                    <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
+                                <h5>Mrs. Nanteza Shakira</h5>
+                                <p class="text-primary">Senior Nutritionist</p>
                             </div>
                         </div>
                     </div>
@@ -421,10 +389,9 @@ class SiteFooter extends HTMLElement {
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+256 779185563</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>lyfexafrica@gmail.com</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-skype"></i></a>
-                            <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -456,7 +423,7 @@ class SiteFooter extends HTMLElement {
                             &copy; <a class="border-bottom" href="index.html">Lyfex Africa</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            Designed By <a class="border-bottom" href="https://eurosatgroup.com/" target="_blank">Eurosat Group Of Companies</a>
+                            Designed By <a class="border-bottom" href="https://eurosatgroup.com/"">Eurosat Group Of Companies</a>
                         </div>
                     </div>
                 </div>
