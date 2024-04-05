@@ -42,7 +42,7 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">BLOGS</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
                     <li class="breadcrumb-item">resources</li>
                     <li class="breadcrumb-item text-primary active" aria-current="page">Blogs</li>
                 </ol>
@@ -60,7 +60,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="blog-item position-relative overflow-hidden rounded mb-2">
                                 <img class="img-fluid" src="img/children-wellness-2.JPG" alt="">
-                                <a class="blog-overlay text-decoration-none" href="test.html">
+                                <a class="blog-overlay text-decoration-none" href="test.php">
                                     <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
                                     <p class="text-primary m-0">Jan 01, 2050</p>
                                 </a>

@@ -105,7 +105,7 @@
                         </div>
                         <h4 class="mb-3">Nutrition Therapy for Moms</h4>
                         <p class="mb-4">Tailored nutritional support for mothers during and after pregnancy not forgetting those expecting to get pregnant.</p>
-                        <a class="btn" href="service-one.html"><i class="fa fa-arrow-right text-primary me-3"></i>Visit</a>
+                        <a class="btn" href="service-one.php"><i class="fa fa-arrow-right text-primary me-3"></i>Visit</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -115,7 +115,7 @@
                         </div>
                         <h4 class="mb-3">Children's Wellness Programs</h4>
                         <p class="mb-4">Building a foundation of health for the youngest members of your family.</p>
-                        <a class="btn" href="service-two.html"><i class="fa fa-arrow-right text-primary me-3"></i>Visit</a>
+                        <a class="btn" href="service-two.php"><i class="fa fa-arrow-right text-primary me-3"></i>Visit</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -125,7 +125,7 @@
                         </div>
                         <h4 class="mb-3">NutriFinTrancy</h4>
                         <p class="mb-4">Access a wealth of resources to deepen your understanding of nutrition, welling being and Nutri-Finance.</p>
-                        <a class="btn" href="service-three.html"><i class="fa fa-arrow-right text-primary me-3"></i>Visit</a>
+                        <a class="btn" href="service-three.php"><i class="fa fa-arrow-right text-primary me-3"></i>Visit</a>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
     <why-us-section></why-us-section>
 
     <!-- our team designed as template visit templates.js to edit  -->
-    <our-team></our-team>
+    <our-team></our-team>    
 
     <!-- appointment-section designed as template visit templates.js to edit  -->
     <appointment-section></appointment-section>

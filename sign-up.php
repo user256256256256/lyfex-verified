@@ -34,21 +34,43 @@
 
 <body>
 
-    <!-- 404 Start -->
+    <!-- signup Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container text-center">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                    <h1 class="display-1">404</h1>
-                    <h1 class="mb-4">!OOPs Page Not Found</h1>
-                    <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page ?</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="index.html">Go Back To Home</a>
+                    <h3 class="mb-6">Sign Up To Lyfex Admin  Panel</h3>
+                    <form class="bg-light rounded h-100 d-flex align-items-center p-5">
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="User Name" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="password" class="form-control border-0" placeholder="Password" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="password" class="form-control border-0" placeholder="Confirm Password" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Token" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Sing Up Now</button>
+                            </div>
+                            <div>
+                                <p class="mb-4">Already have an account ? <a href="log-in.php"> <span style="color:blue;">Log-In Instead!</span></a></p>
+                                <p class="mb-4">Don't have <a href="contact.php"><span style="color: red;">Token ?</span></a></p>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 404 End -->
+    <!-- signup End -->
         
 
     <!-- Template Javascript -->

@@ -43,7 +43,7 @@ class SiteNav extends HTMLElement {
     
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-            <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
                 <img class="site-logo " src="img/Picture1.png" alt="">
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -51,26 +51,26 @@ class SiteNav extends HTMLElement {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link ">About</a>
+                    <a href="index.php" class="nav-item nav-link">Home</a>
+                    <a href="about.php" class="nav-item nav-link ">About</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="service-one.html" class="dropdown-item">Nutrition Therapy for Moms</a>
-                            <a href="service-two.html" class="dropdown-item">Children's Wellness Programs</a>
-                            <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
+                            <a href="service-one.php" class="dropdown-item">Nutrition Therapy for Moms</a>
+                            <a href="service-two.php" class="dropdown-item">Children's Wellness Programs</a>
+                            <a href="service-three.php" class="dropdown-item">NutriFinTrancy</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="faqs.html" class="dropdown-item">FAQs</a>
-                            <a href="blogs.html" class="dropdown-item">Blogs</a>
+                            <a href="faqs.php" class="dropdown-item">FAQs</a>
+                            <a href="blogs.php" class="dropdown-item">Blogs</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="contact.php" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="appointment.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="appointment.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -95,7 +95,7 @@ class AboutUs extends HTMLElement {
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.html">About Us</a></p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.php">About Us</a></p>
                         <h1 class="mb-4">Why You Should Trust Us? Get To Know About Us!</h1>
                         <p>We are a dedicated venture that integrates nutrition education for children and expectant mothers with essential NutriFinTrancy programs for families. Our goal is to create a harmonious approach to overall well-being by addressing both physical health and financial stability.</p>
                         <p class="mb-4">Through our Integrated Approach to support individuals and families our their journey to live a healthier and happy life we employ a number of prepositions to be the best.</p>
@@ -195,49 +195,82 @@ class OurTeam extends HTMLElement {
         this.innerHTML= `
         <!-- Team Start -->
         <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <p class="d-inline-block border rounded-pill py-1 px-4">Team</p>
-                    <h1>Our Team</h1>
-                </div>
-                <div class="row g-4 team-cards">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item position-relative rounded overflow-hidden">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            </div>
-                            <div class="team-text bg-light text-center p-4">
-                                <h5>Mrs. Nanteza Nadia Malker</h5>
-                                <p class="text-primary">Founder & Team Lead. A professional Nutritionist and Dietitian</p>
+                <div class="container">
+                    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                        <p class="d-inline-block border rounded-pill py-1 px-4">Team</p>
+                        <h1>Our Team</h1>
+                    </div>
+                    <div class="row g-4 team-cards">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/team-1.jpg" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>Mrs. Nanteza Nadia Malker</h5>
+                                    <p class="text-primary">Founder & Team Lead. A professional Nutritionist and Dietitian</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item position-relative rounded overflow-hidden">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            </div>
-                            <div class="team-text bg-light text-center p-4">
-                                <h5>Mr. Alawi Mutebi</h5>
-                                <p class="text-primary">Business Development Consultant</p>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/team-3.jpg" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>Mr. Alawi Mutebi</h5>
+                                    <p class="text-primary">Business Development Consultant</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item position-relative rounded overflow-hidden">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>Mrs. Aisha</h5>
+                                    <p class="text-primary">Pediatrics Nurse</p>
+                                </div>
                             </div>
-                            <div class="team-text bg-light text-center p-4">
-                                <h5>Mrs. Nanteza Shakira</h5>
-                                <p class="text-primary">Senior Nutritionist</p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/team-5.jpg" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>Mr. Yusuf Jabar</h5>
+                                    <p class="text-primary">Professional Fitness Trainer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/team-2.jpg" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>Mrs. Zalwango Hafsa</h5>
+                                    <p class="text-primary">Nutrition Associate</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/team-6.jpg" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>Mrs. Nanteza Shakira</h5>
+                                    <p class="text-primary">Professional Nutritionist & Senior Projects Associates</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Team End -->
+            <!-- Team End -->
         `
     }
 }
@@ -253,7 +286,7 @@ class AppointmentSection extends HTMLElement {
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.html">Appointment</a></p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.php">Appointment</a></p>
                         <h1 class="mb-4">Make An Appointment To Visit Our Specialist</h1>
                         <p class="mb-4">Fill in the information and you will recieve a confimation email if your appointment is confirmed. You can also contact us through our email or call us.</p>
                         <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
@@ -290,28 +323,14 @@ class AppointmentSection extends HTMLElement {
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <select class="form-select border-0" style="height: 55px;">
-                                            <option selected>Choose Doctor</option>
-                                            <option value="1">Doctor 1</option>
-                                            <option value="2">Doctor 2</option>
-                                            <option value="3">Doctor 3</option>
+                                            <option selected>Select Service</option>
+                                            <option value="1">Service One </option>
+                                            <option value="2">Service Two</option>
+                                            <option value="3">Service Three</option>
                                         </select>
                                     </div>
-                                    <div class="col-12 col-sm-6">
-                                        <div class="date" id="date" data-target-input="nearest">
-                                            <input type="text"
-                                                class="form-control border-0 datetimepicker-input"
-                                                placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6">
-                                        <div class="time" id="time" data-target-input="nearest">
-                                            <input type="text"
-                                                class="form-control border-0 datetimepicker-input"
-                                                placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
-                                        </div>
-                                    </div>
                                     <div class="col-12">
-                                        <textarea class="form-control border-0" rows="5" placeholder="Describe your problem"></textarea>
+                                        <textarea class="form-control border-0" rows="5" placeholder="Describe your issue!"></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
@@ -396,21 +415,21 @@ class SiteFooter extends HTMLElement {
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Services</h5>
-                        <a class="btn btn-link" href="service-one.html">Nutrition Therapy for Moms</a>
-                        <a class="btn btn-link" href="service-two.html">Children's Wellness Programs</a>
-                        <a class="btn btn-link" href="service-three.html">NutriFinTrancy</a>
+                        <a class="btn btn-link" href="service-one.php">Nutrition Therapy for Moms</a>
+                        <a class="btn btn-link" href="service-two.php">Children's Wellness Programs</a>
+                        <a class="btn btn-link" href="service-three.php">NutriFinTrancy</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Quick Links</h5>
-                        <a class="btn btn-link" href="about.html">About Us</a>
-                        <a class="btn btn-link" href="blogs.html">Blogs</a>
-                        <a class="btn btn-link" href="contact.html">Contact Us</a>
-                        <a class="btn btn-link" href="appointment.html">Appointment</a>
+                        <a class="btn btn-link" href="appointment.php">Appointment</a>
+                        <a class="btn btn-link" href="about.php">About Us</a>
+                        <a class="btn btn-link" href="privacy.php">privacy</a>
+                        <a class="btn btn-link" href="terms.php">terms</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Lyfex-Africa</h5>
                         <p>Empowering Families and Nourishing Lives</p>
-                        <a href="index.html">
+                        <a href="index.php">
                             <img class="site-logo " src="img/Picture1.png" alt="site-logo">
                         </a>
                     </div>
@@ -420,7 +439,7 @@ class SiteFooter extends HTMLElement {
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="index.html">Lyfex Africa</a>, All Right Reserved.
+                            &copy; <a class="border-bottom" href="index.php">Lyfex Africa</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             Designed By <a class="border-bottom" href="https://eurosatgroup.com/"">Eurosat Group Of Companies</a>
