@@ -38,65 +38,61 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header-service-three py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">NutriFinTrancy</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">FAQs</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Services</li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">NutriFinTrancy</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
+                    <li class="breadcrumb-item">resources</li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Faqs</li>
                 </ol>
             </nav>
         </div>
     </div>
     <!-- Page Header End -->
 
+
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded-pill py-1 px-4">About Service</p>
-                <h1>NutriFinTrancy</h1>
+                <p class="d-inline-block border rounded-pill py-1 px-4">faqs</p>
+                <h1>Frequently Asked Questions (faqs)</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-light rounded h-100 p-5">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-credit-card text-primary fs-4"></i>
-                        </div>
-                        <h4 class="mb-3">Nutrition financial budgeting</h4>
+                    <div class=" bg-light rounded h-100 p-5">
+                        <h4 class="mb-3">Cardiology</h4>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-light rounded h-100 p-5">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-shopping-cart text-primary fs-4"></i>
-                        </div>
-                        <h4 class="mb-3">Cost-effective grocery shopping</h4>
+                    <div class=" bg-light rounded h-100 p-5">
+                        <h4 class="mb-3">Pulmonary</h4>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-light rounded h-100 p-5">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-heartbeat text-primary fs-4"></i>
-                        </div>
-                        <h4 class="mb-3">Managing expenses related to dietary restrictions or medical conditions</h4>
+                    <div class=" bg-light rounded h-100 p-5">
+                        <h4 class="mb-3">Neurology</h4>
                         <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Learn More</a>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class=" bg-light rounded h-100 p-5">
+                        <h4 class="mb-3">Orthopedics</h4>
+                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Service End -->
-
-    <!-- appointment-section designed as template visit templates.js to edit  -->
-    <appointment-section></appointment-section>
 
     <!-- testimonial-section designed as template visit templates.js to edit  -->
     <testimonial-section></testimonial-section>
