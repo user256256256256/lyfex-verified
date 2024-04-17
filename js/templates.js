@@ -43,7 +43,7 @@ class SiteNav extends HTMLElement {
     
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-            <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
                 <img class="site-logo " src="img/Picture1.png" alt="">
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -51,26 +51,26 @@ class SiteNav extends HTMLElement {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.php" class="nav-item nav-link">Home</a>
-                    <a href="about.php" class="nav-item nav-link ">About</a>
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link ">About</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="service-one.php" class="dropdown-item">Nutrition Therapy for Moms</a>
-                            <a href="service-two.php" class="dropdown-item">Children's Wellness Programs</a>
-                            <a href="service-three.php" class="dropdown-item">NutriFinTrancy</a>
+                            <a href="service-one.html" class="dropdown-item">Nutrition Therapy for Moms</a>
+                            <a href="service-two.html" class="dropdown-item">Children's Wellness Programs</a>
+                            <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="faqs.php" class="dropdown-item">FAQs</a>
-                            <a href="blogs.php" class="dropdown-item">Blogs</a>
+                            <a href="faqs.html" class="dropdown-item">FAQs</a>
+                            <a href="blogs.html" class="dropdown-item">Blogs</a>
                         </div>
                     </div>
-                    <a href="contact.php" class="nav-item nav-link">Contact</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="appointment.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="appointment.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -95,7 +95,7 @@ class AboutUs extends HTMLElement {
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.php">About Us</a></p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.html">About Us</a></p>
                         <h1 class="mb-4">Why You Should Trust Us? Get To Know About Us!</h1>
                         <p>We are a dedicated venture that integrates nutrition education for children and expectant mothers with essential NutriFinTrancy programs for families. Our goal is to create a harmonious approach to overall well-being by addressing both physical health and financial stability.</p>
                         <p class="mb-4">Through our Integrated Approach to support individuals and families our their journey to live a healthier and happy life we employ a number of prepositions to be the best.</p>
@@ -215,7 +215,7 @@ class OurTeam extends HTMLElement {
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
-                                    <img class="img-fluid" src="img/team-3.jpg" alt="">
+                                    <img class="img-fluid" src="img/team-2.jpg" alt="">
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mr. Alawi Mutebi</h5>
@@ -226,7 +226,7 @@ class OurTeam extends HTMLElement {
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
-                                    <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                    <img class="img-fluid" src="img/team-3.jpg" alt="">
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Aisha</h5>
@@ -237,18 +237,7 @@ class OurTeam extends HTMLElement {
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
-                                    <img class="img-fluid" src="img/team-5.jpg" alt="">
-                                </div>
-                                <div class="team-text bg-light text-center p-4">
-                                    <h5>Mr. Yusuf Jabar</h5>
-                                    <p class="text-primary">Professional Fitness Trainer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="team-item position-relative rounded overflow-hidden">
-                                <div class="overflow-hidden">
-                                    <img class="img-fluid" src="img/team-2.jpg" alt="">
+                                    <img class="img-fluid" src="img/team-4.jpg" alt="">
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Zalwango Hafsa</h5>
@@ -256,17 +245,17 @@ class OurTeam extends HTMLElement {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <!--  <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
-                                    <img class="img-fluid" src="img/team-6.jpg" alt="">
+                                    <img class="img-fluid" src="img/team-5.jpg" alt="">
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Nanteza Shakira</h5>
                                     <p class="text-primary">Professional Nutritionist & Senior Projects Associates</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -286,7 +275,7 @@ class AppointmentSection extends HTMLElement {
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.php">Appointment</a></p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.html">Appointment</a></p>
                         <h1 class="mb-4">Make An Appointment To Visit Our Specialist</h1>
                         <p class="mb-4">Fill in the information and you will recieve a confimation email if your appointment is confirmed. You can also contact us through our email or call us.</p>
                         <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
@@ -409,27 +398,27 @@ class SiteFooter extends HTMLElement {
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>lyfexafrica@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
-                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/profile.html?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Services</h5>
-                        <a class="btn btn-link" href="service-one.php">Nutrition Therapy for Moms</a>
-                        <a class="btn btn-link" href="service-two.php">Children's Wellness Programs</a>
-                        <a class="btn btn-link" href="service-three.php">NutriFinTrancy</a>
+                        <a class="btn btn-link" href="service-one.html">Nutrition Therapy for Moms</a>
+                        <a class="btn btn-link" href="service-two.html">Children's Wellness Programs</a>
+                        <a class="btn btn-link" href="service-three.html">NutriFinTrancy</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Quick Links</h5>
-                        <a class="btn btn-link" href="appointment.php">Appointment</a>
-                        <a class="btn btn-link" href="about.php">About Us</a>
-                        <a class="btn btn-link" href="privacy.php">privacy</a>
-                        <a class="btn btn-link" href="terms.php">terms</a>
+                        <a class="btn btn-link" href="appointment.html">Appointment</a>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="privacy.html">privacy</a>
+                        <a class="btn btn-link" href="terms.html">terms</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Lyfex-Africa</h5>
                         <p>Empowering Families and Nourishing Lives</p>
-                        <a href="index.php">
+                        <a href="index.html">
                             <img class="site-logo " src="img/Picture1.png" alt="site-logo">
                         </a>
                     </div>
@@ -439,7 +428,7 @@ class SiteFooter extends HTMLElement {
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="index.php">Lyfex Africa</a>, All Right Reserved.
+                            &copy; <a class="border-bottom" href="index.html">Lyfex Africa</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             Designed By <a class="border-bottom" href="https://eurosatgroup.com/"">Eurosat Group Of Companies</a>
@@ -453,3 +442,54 @@ class SiteFooter extends HTMLElement {
     }
 }
 customElements.define('site-footer', SiteFooter)
+
+// nav admin-panel
+class AdminPanleNav extends HTMLElement {
+    connectedCallback () {
+        this.innerHTML = `
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <div class="app-icon">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                    <img class="site-logo admin-panel-logo " src="img/Picture1.png" alt="">
+                </a>
+            </div>
+          </div>
+          <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+              <a href="#">
+                <span><i class="fa fa-home text-primary fs-7"></i> Home</span>
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                  <span><i class="fa fa-check-square text-primary fs-7"></i> Confirmed Appointments</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                  <span><i class="fa fa-spinner text-primary fs-7"></i> Pending Appointments</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                  <span><i class="fa fa-trophy text-primary fs-7"></i> Accomplished</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                  <span><i class="fa fa-user text-primary fs-7"></i> My Profile</span>
+                </a>
+            </li>
+          </ul>
+          <div class="account-info">
+            <div class="account-info-picture">
+              <img src="/" alt="Account">
+            </div>
+            <div class="account-info-name">user name</div>
+          </div>
+        </div>
+        `
+    }
+}
+customElements.define('admin-panel-nav', AdminPanleNav)
