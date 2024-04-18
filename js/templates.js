@@ -309,31 +309,28 @@ class AppointmentSection extends HTMLElement {
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div id="success"></div>
                         <div class="bg-light rounded h-100 d-flex align-items-center p-5">
-                            <form>
+                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
                                 <div class="row g-3">
-                                    <div class="col-12 col-sm-6">
-                                        <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                    <div class="col-12 col-sm-6 control-group">
+                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" style="height: 55px;">
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="col-12 col-sm-6">
-                                        <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                    <div class="col-12 col-sm- control-group6">
+                                        <input type="email" class="form-control border-0" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" style="height: 55px;">
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="col-12 col-sm-6">
-                                        <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+                                    <div class="col-12 col-sm-6 control-group">
+                                        <input type="text" class="form-control border-0" id="subject" placeholder="Your Mobile" required="required" data-validation-required-message="Please enter a subject" style="height: 55px;">
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="col-12 col-sm-6">
-                                        <select class="form-select border-0" style="height: 55px;">
-                                            <option selected>Select Service</option>
-                                            <option value="1">Service One </option>
-                                            <option value="2">Service Two</option>
-                                            <option value="3">Service Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea class="form-control border-0" rows="5" placeholder="Describe your issue!"></textarea>
+                                    <div class="col-12 control-group">
+                                        <textarea class="form-control border-0" rows="5" id="message" placeholder="Describe your issue!" required="required" data-validation-required-message="Please enter your message" ></textarea>
+                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
+                                        <button class="btn btn-primary w-100 py-3" type="submit" id="sendMessageButton" >Book Appointment</button>
                                     </div>
                                 </div>
                             </form>
