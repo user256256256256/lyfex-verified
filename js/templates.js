@@ -201,7 +201,7 @@ class OurTeam extends HTMLElement {
                         <h1>Our Team</h1>
                     </div>
                     <div class="row g-4 team-cards">
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp border border-secondary m-2" data-wow-delay="0.1s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
                                     <img class="img-fluid" src="img/team-1.jpg" alt="">
@@ -212,7 +212,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp border border-secondary m-2" data-wow-delay="0.3s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
                                     <img class="img-fluid" src="img/team-2.jpg" alt="">
@@ -223,7 +223,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp border border-secondary m-2" data-wow-delay="0.5s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
                                     <img class="img-fluid" src="img/team-3.jpg" alt="">
@@ -234,7 +234,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp border border-secondary m-2" data-wow-delay="0.5s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
                                     <img class="img-fluid" src="img/team-4.jpg" alt="">
@@ -245,7 +245,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                             </div>
                         </div>
-                        <!--  <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp border border-secondary m-2" data-wow-delay="0.5s">
                             <div class="team-item position-relative rounded overflow-hidden">
                                 <div class="overflow-hidden">
                                     <img class="img-fluid" src="img/team-5.jpg" alt="">
@@ -255,7 +255,18 @@ class OurTeam extends HTMLElement {
                                     <p class="text-primary">Professional Nutritionist & Senior Projects Associates</p>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp border border-secondary m-2" data-wow-delay="0.5s">
+                            <div class="team-item position-relative rounded overflow-hidden">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="img/team-6.jpg" alt="">
+                                </div>
+                                <div class="team-text bg-light text-center p-4">
+                                    <h5>Mr. Yusuf Jabar </h5>
+                                    <p class="text-primary">Professional Nutritionist Fitness Trainer</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -443,53 +454,3 @@ class SiteFooter extends HTMLElement {
 }
 customElements.define('site-footer', SiteFooter)
 
-// nav admin-panel
-class AdminPanleNav extends HTMLElement {
-    connectedCallback () {
-        this.innerHTML = `
-        <div class="sidebar">
-          <div class="sidebar-header">
-            <div class="app-icon">
-                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-                    <img class="site-logo admin-panel-logo " src="img/Picture1.png" alt="">
-                </a>
-            </div>
-          </div>
-          <ul class="sidebar-list">
-            <li class="sidebar-list-item">
-              <a href="#">
-                <span><i class="fa fa-home text-primary fs-7"></i> Home</span>
-              </a>
-            </li>
-            <li class="sidebar-list-item">
-                <a href="#">
-                  <span><i class="fa fa-check-square text-primary fs-7"></i> Confirmed Appointments</span>
-                </a>
-            </li>
-            <li class="sidebar-list-item">
-                <a href="#">
-                  <span><i class="fa fa-spinner text-primary fs-7"></i> Pending Appointments</span>
-                </a>
-            </li>
-            <li class="sidebar-list-item">
-                <a href="#">
-                  <span><i class="fa fa-trophy text-primary fs-7"></i> Accomplished</span>
-                </a>
-            </li>
-            <li class="sidebar-list-item">
-                <a href="#">
-                  <span><i class="fa fa-user text-primary fs-7"></i> My Profile</span>
-                </a>
-            </li>
-          </ul>
-          <div class="account-info">
-            <div class="account-info-picture">
-              <img src="/" alt="Account">
-            </div>
-            <div class="account-info-name">user name</div>
-          </div>
-        </div>
-        `
-    }
-}
-customElements.define('admin-panel-nav', AdminPanleNav)

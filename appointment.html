@@ -52,7 +52,74 @@
     <!-- Page Header End -->
 
     <!-- appointment-section designed as template visit templates.js to edit  -->
-    <appointment-section></appointment-section>
+    <!-- <appointment-section></appointment-section> -->
+    <!-- Appointment Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.html">Appointment</a></p>
+                    <h1 class="mb-4">Make An Appointment To Visit Our Specialist</h1>
+                    <p class="mb-4">Fill in the information and you will recieve a confimation email if your appointment is confirmed. You can also contact us through our email or call us.</p>
+                    <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Call Us Now</p>
+                            <h5 class="mb-0">+256 779185563</h5>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Mail Us Now</p>
+                            <h5 class="mb-0">lyfexafrica@gmail.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div id="success"></div>
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6 control-group">
+                                    <input type="text" class="form-control border-0" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12 col-sm- control-group6">
+                                    <input type="email" class="form-control border-0" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12 col-sm-6 control-group">
+                                    <input type="text" class="form-control border-0" id="subject" placeholder="Your Mobile" required="required" data-validation-required-message="Please enter a subject" style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <!-- <div class="col-12 col-sm-6 control-group">
+                                    <select class="form-select border-0" id="service" required="required" data-validation-required-message="Please choose a service" style="height: 55px;">
+                                        <option value="1">Nutrition Therapy for Moms </option>
+                                        <option value="2">Children's Wellness Programs</option>
+                                        <option value="3">NutriFinTrancy</option>
+                                    </select>
+                                    <p class="help-block text-danger"></p>
+                                </div> -->
+                                <div class="col-12 control-group">
+                                    <textarea class="form-control border-0" rows="5" id="message" placeholder="Describe your issue!" required="required" data-validation-required-message="Please enter your message" ></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="sendMessageButton" >Book Appointment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
         
     <!-- designed as template visit templates.js to edit -->
     <site-footer></site-footer>
@@ -71,6 +138,10 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- appointment js file -->
+    <script src="appointment/jqBootstrapValidation.min.js"></script>
+    <script src="appointment/appointment.js"></script>
 
     <!-- main js -->
     <script src="js/main.js"></script>
