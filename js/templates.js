@@ -35,6 +35,7 @@ class SiteNav extends HTMLElement {
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
+                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -54,7 +55,7 @@ class SiteNav extends HTMLElement {
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link ">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                             <a href="service-one.html" class="dropdown-item">Nutrition Therapy for Moms</a>
                             <a href="service-two.html" class="dropdown-item">Children's Wellness Programs</a>
@@ -96,7 +97,7 @@ class AboutUs extends HTMLElement {
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.html">About Us</a></p>
-                        <h1 class="mb-4">Why You Should Trust Us? Get To Know About Us!</h1>
+                        <h1 class="mb-4">Get To Know About Us!</h1>
                         <p>We are a dedicated venture that integrates nutrition education for children and expectant mothers with essential NutriFinTrancy programs for families. Our goal is to create a harmonious approach to overall well-being by addressing both physical health and financial stability.</p>
                         <p class="mb-4">Through our Integrated Approach to support individuals and families our their journey to live a healthier and happy life we employ a number of prepositions to be the best.</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Experienced and Caring Team</p>
@@ -133,8 +134,8 @@ class WhyUsSection extends HTMLElement {
                                         <i class="fa fa-user-md text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="text-white mb-2">Experience</p>
-                                        <h5 class="text-white mb-0">Doctors</h5>
+                                        <p class="text-white mb-2">Experienced</p>
+                                        <h5 class="text-white mb-0">Caring Team</h5>
                                     </div>
                                 </div>
                             </div>
@@ -144,8 +145,8 @@ class WhyUsSection extends HTMLElement {
                                         <i class="fa fa-check text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="text-white mb-2">Quality</p>
-                                        <h5 class="text-white mb-0">Services</h5>
+                                        <p class="text-white mb-2">Commitment to </p>
+                                        <h5 class="text-white mb-0">Your Family's Health</h5>
                                     </div>
                                 </div>
                             </div>
@@ -155,8 +156,8 @@ class WhyUsSection extends HTMLElement {
                                         <i class="fa fa-comment-medical text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="text-white mb-2">Positive</p>
-                                        <h5 class="text-white mb-0">Consultation</h5>
+                                        <p class="text-white mb-2">Holistic</p>
+                                        <h5 class="text-white mb-0">Wellness Focus</h5>
                                     </div>
                                 </div>
                             </div>
@@ -208,7 +209,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Nanteza Nadia Malker</h5>
-                                    <p class="text-primary">Founder & Team Lead. A professional Nutritionist and Dietitian</p>
+                                    <p role="button" class="text-primary">Founder & Team Lead. <span role="button" class="text-decoration-underline" >Read CV</span></p>
                                 </div>
                             </div>
                         </div>
@@ -219,7 +220,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mr. Alawi Mutebi</h5>
-                                    <p class="text-primary">Business Development Consultant</p>
+                                    <p role="button" class="text-primary">Business Development Consultant. <span role="button" class="text-decoration-underline" >Read CV</span></p>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +231,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Aisha</h5>
-                                    <p class="text-primary">Pediatrics Nurse</p>
+                                    <p role="button" class="text-primary">Pediatrics Nurse. <span role="button" class="text-decoration-underline" >Read CV</span></p>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +242,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Zalwango Hafsa</h5>
-                                    <p class="text-primary">Nutrition Associate</p>
+                                    <p role="button" class="text-primary">Nutrition Associate. <span role="button" class="text-decoration-underline" >Read CV</span></p>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +253,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Nanteza Shakira</h5>
-                                    <p class="text-primary">Professional Nutritionist & Senior Projects Associates</p>
+                                    <p role="button" class="text-primary">Professional Nutritionist & Senior Projects Associates. <span role="button" class="text-decoration-underline" >Read CV</span></p>
                                 </div>
                             </div>
                         </div>
@@ -263,7 +264,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mr. Yusuf Jabar </h5>
-                                    <p class="text-primary">Professional Nutritionist Fitness Trainer</p>
+                                    <p role="button" class="text-primary">Professional Nutritionist Fitness Trainer. <span role="button" class="text-decoration-underline" >Read CV</span> </p>
                                 </div>
                             </div>
                         </div>
@@ -347,49 +348,49 @@ customElements.define('appointment-section', AppointmentSection)
 
 // testimonial-section
 
-class TestimonialSection extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML= `
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <p class="d-inline-block border rounded-pill py-1 px-4">Testimonials</p>
-                    <h1>What Our Clients Say!</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item text-center">
-                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
-                        <div class="testimonial-text rounded text-center p-4">
-                            <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                            <h5 class="mb-1">Patient Name</h5>
-                            <span class="fst-italic">Profession</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
-                        <div class="testimonial-text rounded text-center p-4">
-                            <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                            <h5 class="mb-1">Patient Name</h5>
-                            <span class="fst-italic">Profession</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;">
-                        <div class="testimonial-text rounded text-center p-4">
-                            <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                            <h5 class="mb-1">Patient Name</h5>
-                            <span class="fst-italic">Profession</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-        `
-    }
-}
-customElements.define('testimonial-section', TestimonialSection)
+// class TestimonialSection extends HTMLElement {
+//     connectedCallback() {
+//         this.innerHTML= `
+//         <!-- Testimonial Start -->
+//         <div class="container-xxl py-5">
+//             <div class="container">
+//                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+//                     <p class="d-inline-block border rounded-pill py-1 px-4">Testimonials</p>
+//                     <h1>What Our Clients Say!</h1>
+//                 </div>
+//                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+//                     <div class="testimonial-item text-center">
+//                         <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
+//                         <div class="testimonial-text rounded text-center p-4">
+//                             <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+//                             <h5 class="mb-1">Patient Name</h5>
+//                             <span class="fst-italic">Profession</span>
+//                         </div>
+//                     </div>
+//                     <div class="testimonial-item text-center">
+//                         <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
+//                         <div class="testimonial-text rounded text-center p-4">
+//                             <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+//                             <h5 class="mb-1">Patient Name</h5>
+//                             <span class="fst-italic">Profession</span>
+//                         </div>
+//                     </div>
+//                     <div class="testimonial-item text-center">
+//                         <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;">
+//                         <div class="testimonial-text rounded text-center p-4">
+//                             <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+//                             <h5 class="mb-1">Patient Name</h5>
+//                             <span class="fst-italic">Profession</span>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//         <!-- Testimonial End -->
+//         `
+//     }
+// }
+// customElements.define('testimonial-section', TestimonialSection)
 
 // site footer
 class SiteFooter extends HTMLElement {
@@ -427,7 +428,7 @@ class SiteFooter extends HTMLElement {
                         <h5 class="text-light mb-4">Lyfex-Africa</h5>
                         <p>Empowering Families and Nourishing Lives</p>
                         <a href="index.html">
-                            <img class="site-logo " src="img/Picture1.png" alt="site-logo">
+                            <img class="site-logo " src="img/Picture2.png" alt="site-logo">
                         </a>
                     </div>
                 </div>
@@ -439,7 +440,7 @@ class SiteFooter extends HTMLElement {
                             &copy; <a class="border-bottom" href="index.html">Lyfex Africa</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            Designed By <a class="border-bottom" href="https://eurosatgroup.com/"">Eurosat Group Of Companies</a>
+                            Powered By <a class="border-bottom" href="https://eurosatgroup.com/">Eurosat Group</a>
                         </div>
                     </div>
                 </div>
