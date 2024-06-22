@@ -35,7 +35,7 @@ class SiteNav extends HTMLElement {
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
-                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -57,16 +57,19 @@ class SiteNav extends HTMLElement {
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="service-one.html" class="dropdown-item">Nutrition Therapy for Moms</a>
-                            <a href="service-two.html" class="dropdown-item">Children's Wellness Programs</a>
+                            <a href="service-one.html" class="dropdown-item">Nuturer Nuturer's Program (NNP)</a>
+                            <a href="service-two.html" class="dropdown-item">Parents's Joy Program (PJP)</a>
                             <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
+                            <a href="service-four.html" class="dropdown-item">NCD Management</a>
+                            <a href="service-five.html" class="dropdown-item">Tele Nutrition</a>
+
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                             <a href="faqs.html" class="dropdown-item">FAQs</a>
-                            <a href="blogs.html" class="dropdown-item">Blogs</a>
+                           <!--   <a href="blogs.html" class="dropdown-item">Blogs</a> -->
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -209,7 +212,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Nanteza Nadia Malker</h5>
-                                    <p role="button" class="text-primary">Founder & Team Lead. <span role="button" class="text-decoration-underline" >Read CV</span></p>
+                                    <p role="button" class="text-primary">Founder & Team Lead.</p>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +223,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mr. Alawi Mutebi</h5>
-                                    <p role="button" class="text-primary">Business Development Consultant. <span role="button" class="text-decoration-underline" >Read CV</span></p>
+                                    <p role="button" class="text-primary">Business Development Consultant.</p>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +234,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Aisha</h5>
-                                    <p role="button" class="text-primary">Pediatrics Nurse. <span role="button" class="text-decoration-underline" >Read CV</span></p>
+                                    <p role="button" class="text-primary">Pediatrics Nurse.</p>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +245,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Zalwango Hafsa</h5>
-                                    <p role="button" class="text-primary">Nutrition Associate. <span role="button" class="text-decoration-underline" >Read CV</span></p>
+                                    <p role="button" class="text-primary">Nutrition Associate.</p>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +256,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mrs. Nanteza Shakira</h5>
-                                    <p role="button" class="text-primary">Professional Nutritionist & Senior Projects Associates. <span role="button" class="text-decoration-underline" >Read CV</span></p>
+                                    <p role="button" class="text-primary">Professional Nutritionist & Senior Projects Associates.</p>
                                 </div>
                             </div>
                         </div>
@@ -264,7 +267,7 @@ class OurTeam extends HTMLElement {
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>Mr. Yusuf Jabar </h5>
-                                    <p role="button" class="text-primary">Professional Nutritionist Fitness Trainer. <span role="button" class="text-decoration-underline" >Read CV</span> </p>
+                                    <p role="button" class="text-primary">Professional Nutritionist Fitness Trainer. </p>
                                 </div>
                             </div>
                         </div>
@@ -409,19 +412,22 @@ class SiteFooter extends HTMLElement {
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/profile.html?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Services</h5>
-                        <a class="btn btn-link" href="service-one.html">Nutrition Therapy for Moms</a>
-                        <a class="btn btn-link" href="service-two.html">Children's Wellness Programs</a>
+                        <a class="btn btn-link" href="service-one.html">Nuturer Nuturer's Program (NNP)</a>
+                        <a class="btn btn-link" href="service-two.html">Parents's Joy Program (PJP)</a>
                         <a class="btn btn-link" href="service-three.html">NutriFinTrancy</a>
+                        <a class="btn btn-link" href="service-four.html">NCD Management</a>
+                        <a class="btn btn-link" href="service-five.html">Tele Nutrition</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Quick Links</h5>
                         <a class="btn btn-link" href="appointment.html">Appointment</a>
                         <a class="btn btn-link" href="about.html">About Us</a>
-                        <a class="btn btn-link" href="privacy.html">privacy</a>
+                        <!--  <a class="btn btn-link" href="privacy.html">privacy</a>   -->
                         <a class="btn btn-link" href="terms.html">terms</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
