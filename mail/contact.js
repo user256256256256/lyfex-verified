@@ -1,63 +1,57 @@
-$(function () {
+// contact Js validation
 
-    $("#contactForm input, #contactForm textarea").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function ($form, event, errors) {
+const senderName = document.getElementById('name')
+const senderEmail = document.getElementById('email') 
+const senderSubject = document.getElementById('subject') 
+const senderMessage = document.getElementById('message')
+const sendMessageButton = document.getElementById('sendMessageButton') 
+
+sendMessageButton.addEventListener('click', (e)=> {
+    e.preventDefault()
+    if (senderName.value.trim() == '') {
+        senderName.nextElementSibling.textContent = 'Please fill in your name';
+    }
+    if (senderEmail.value.trim() == '') {
+        senderEmail.nextElementSibling.textContent = 'Please fill in your email';
+    }
+    if (senderSubject.value.trim() == '') {
+        senderSubject.nextElementSibling.textContent = 'Please fill the subject';
+    }
+    if (senderMessage.value.trim() == '') {
+        senderMessage.nextElementSibling.textContent = 'Please fill in your message';
+    }
+
+    const statusMessage = document.getElementById('status-message')
+
+    const params = new URLSearchParams()
+    params.append('senderName', senderName.value.trim())
+    params.append('senderEmail', senderEmail.value.trim())
+    params.append('senderSubject', senderSubject.value.trim())
+    params.append('senderMessage', senderMessage.value.trim())
+
+
+    
+    fetch('mail/contact.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
         },
-        submitSuccess: function ($form, event) {
-            event.preventDefault();
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var subject = $("input#subject").val();
-            var message = $("textarea#message").val();
+        body: params.toString()
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            statusMessage.classList.add('text-success')
+            statusMessage.textContent = data.success
+        } else {
+            statusMessage.classList.add('text-danger')
+            statusMessage.textContent = data.error
+        }
+    })
+    .catch(error => {
+        console.error('Error', error)
+    })
 
-            $this = $("#sendMessageButton");
-            $this.prop("disabled", true);
+})
 
-            $.ajax({
-                url: "contact.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    email: email,
-                    subject: subject,
-                    message: message
-                },
-                cache: false,
-                success: function () {
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success')
-                    $('#success > .alert-success')
-                            .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
-                            .append('</div>');
-                    $('#contactForm').trigger("reset");
-                },
-                error: function () {
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger')
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
-                    $('#success > .alert-danger').append('</div>');
-                    $('#contactForm').trigger("reset");
-                },
-                complete: function () {
-                    setTimeout(function () {
-                        $this.prop("disabled", false);
-                    }, 1000);
-                }
-            });
-        },
-        filter: function () {
-            return $(this).is(":visible");
-        },
-    });
 
-    $("a[data-toggle=\"tab\"]").click(function (e) {
-        e.preventDefault();
-        $(this).tab("show");
-    });
-});
-
-$('#name').focus(function () {
-    $('#success').html('');
-});

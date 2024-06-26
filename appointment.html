@@ -52,7 +52,106 @@
     <!-- Page Header End -->
 
     <!-- appointment-section designed as template visit templates.js to edit  -->
-    <appointment-section></appointment-section>
+    <!-- <appointment-section></appointment-section> -->
+    <!-- Appointment Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.html">Appointment</a></p>
+                    <h1 class="mb-4">Make An Appointment To Visit Our Specialist</h1>
+                    <p class="mb-4">Fill in the information and you will recieve a confimation email if your appointment is confirmed. You can also contact us through our email or call us.</p>
+                    <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Call Us Now</p>
+                            <h5 class="mb-0">+256 779185563</h5>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Mail Us Now</p>
+                            <h5 class="mb-0">info@lyfexafrica.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                        <form name="sentMessage" id="contactForm" >
+                            <div class="row g-3">
+                                <div class="col-6 col-sm-6 control-group">
+                                    <input type="text" class="form-control border-0" id="name" placeholder="Name"  style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-6 col-sm- control-group6">
+                                    <input type="email" class="form-control border-0" id="email" placeholder="Email"  style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-6 col-sm-6 control-group">
+                                    <input type="text" class="form-control border-0" id="subject" placeholder="Mobile Phone No."   style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-6 col-sm-6 control-group">
+                                    <input type="text" class="form-control border-0" id="address" placeholder="Address" style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-6 col-sm-6 control-group">
+                                    <input type="text" class="form-control border-0" id="wh-contact" placeholder="Whatsapp No."  style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-6 col-sm-6 control-group">
+                                    <input type="text" class="form-control border-0" id="age" placeholder="Age"  style="height: 55px;">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-6 col-sm-6 control-group">
+                                    <label for="Schedule">Choose Prefered Schedule:</label>
+                                    <select title="schedule" class="form-control border-0" name="Schedule" id="schedule" style="height: 55px;">
+                                        <option value=""></option> 
+                                        <option value="Monday, 9:00am-11am">Monday, 9:00am-11:00am</option>
+                                        <option value="Monday, 2:00pm-4:00pm">Monday, 2:00pm-4:00pm</option>
+                                        <option value="Tuesday, 9:00am-11am">Tuesday, 9:00am-11:00am</option>
+                                        <option value="Tuesday, 2:00pm-4:00pm">Tuesday, 2:00pm-4:00pm</option>                                               
+                                    </select>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-6 col-sm-6 control-group">
+                                    <label for="leads">Where did you hear about us:</label>
+                                    <select title="leads" class="form-control border-0" name="Schedule" id="lead-location" style="height: 55px;">
+                                        <option value=""></option> 
+                                        <option value="facebook">Facebook</option> 
+                                        <option value="twitter/X">Twitter/X</option>                                          
+                                        <option value="whatsapp-group">Whatsapp-group</option>                                          
+                                        <option value="friend">Friend</option>                                          
+                                        <option value="website">Our website</option>                                          
+                                    </select>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12 control-group">
+                                    <textarea class="form-control border-0" rows="5" id="message" placeholder="Short description of your health condition!" ></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div>
+                                    <label class="text-primary" for="privacy-policies"><a href="privacy.html">Accept privacy policies </a></label>
+                                    <input title="privacy-policies" type="checkbox" name="" id="privacy-policies">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="sendMessageButton" >Book Appointment</button>
+                                </div>
+                            <p id="status-message" class="text-center py-3 px-5"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
 
         
     <!-- designed as template visit templates.js to edit -->
@@ -74,7 +173,6 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- appointment js file -->
-    <script src="appointment/jqBootstrapValidation.min.js"></script>
     <script src="appointment/appointment.js"></script>
 
     <!-- main js -->
