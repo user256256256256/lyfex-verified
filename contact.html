@@ -64,25 +64,27 @@
                         <div id="success"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject"  />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message" ></textarea>
+                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" ></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">
                                 <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
                             </div>
                         </form>
+                        <p id="status-message" class="text-center py-3 px-5"></p>
+
                     </div>
                 </div>
             </div>
@@ -109,7 +111,6 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
 
     <!-- main js -->

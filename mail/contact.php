@@ -1,20 +1,49 @@
 <?php
-if(empty($_POST['name']) || empty($_POST['subject']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-  http_response_code(500);
-  exit();
+
+// js config
+
+header('Content-Type: application/json');
+
+if (!empty($_POST)) {
+    $senderName = $_POST['senderName'];
+    $senderEmail = $_POST['senderEmail'];
+    $senderSubject = $_POST['senderSubject'];
+    $senderMessage = $_POST['senderMessage'];
+
+    // check errors
+    
+    if (empty($senderName) || empty($senderEmail) || empty($senderSubject) || empty($senderMessage)) {
+        echo json_encode(['error' => 'Fill in all fields !']);
+        exit();
+    } 
+    if (!filter_var($senderEmail, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['error' => 'Invalid email address !']);
+        exit();
+    }
+
+    // CONFIGURE THE PHP CODE TO SEND EMAILS. 
+    // THE CODE BELOW WAS JUST TEST CODE AND IT MAY NOT WORK.
+
+    $to = 'info@lyfexafrica.com';
+    $subject = 'New Message: ' . $senderSubject;
+    $message = 'Name: ' . $senderName . "\r\n\r\n";
+    $message .= 'Email: ' . $senderEmail . "\r\n\r\n";
+    $message .= 'Message: ' . "\r\n" . $senderMessage;
+
+    $headers = 'From: ' . $senderName . ' <' . $senderEmail . '>' . "\r\n" .
+    'Reply-To: ' . $senderEmail . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+    $mailSent = mail($to, $subject, $message, $headers);
+
+    if ($mailSent) {
+        echo json_encode(['success' => 'Mail Sent Successfully !']);
+    } else {
+         echo json_encode(['error' => 'Failed to connect to server !']);
+    }
+
+    die();
+
+} else {
+    echo json_encode(['error' => 'Failed to connect to server !']);
 }
-
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email = strip_tags(htmlspecialchars($_POST['email']));
-$m_subject = strip_tags(htmlspecialchars($_POST['subject']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
-
-$to = "msaupresident@gmail.com"; 
-$subject = "$m_subject:  $name";
-$body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\n\nEmail: $email\n\nSubject: $m_subject\n\nMessage: $message";
-$header = "From: $email";
-$header .= "Reply-To: $email";	
-
-if(!mail($to, $subject, $body, $header))
-  http_response_code(500);
-?>
