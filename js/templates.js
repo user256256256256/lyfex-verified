@@ -33,8 +33,8 @@ class SiteNav extends HTMLElement {
                     </div>
                     <div class="h-100 d-inline-flex align-items-center">
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
+                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                         <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -449,10 +449,10 @@ class SiteFooter extends HTMLElement {
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+256 779185563</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@lyfexafrica.com</p>
                         <div class="d-flex pt-2">
-                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/profile.html?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
-                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-linkedin-in"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -468,7 +468,6 @@ class SiteFooter extends HTMLElement {
                         <a class="btn btn-link" href="appointment.html">Appointment</a>
                         <a class="btn btn-link" href="about.html">About Us</a>
                         <a class="btn btn-link" href="privacy.html">privacy</a>
-                        <a class="btn btn-link" href="terms.html">terms</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Lyfex-Africa</h5>

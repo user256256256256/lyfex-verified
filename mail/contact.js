@@ -8,18 +8,6 @@ const sendMessageButton = document.getElementById('sendMessageButton')
 
 sendMessageButton.addEventListener('click', (e)=> {
     e.preventDefault()
-    if (senderName.value.trim() == '') {
-        senderName.nextElementSibling.textContent = 'Please fill in your name';
-    }
-    if (senderEmail.value.trim() == '') {
-        senderEmail.nextElementSibling.textContent = 'Please fill in your email';
-    }
-    if (senderSubject.value.trim() == '') {
-        senderSubject.nextElementSibling.textContent = 'Please fill the subject';
-    }
-    if (senderMessage.value.trim() == '') {
-        senderMessage.nextElementSibling.textContent = 'Please fill in your message';
-    }
 
     const statusMessage = document.getElementById('status-message')
 

@@ -15,39 +15,10 @@ const sendMessageButton = document.getElementById('sendMessageButton')
 
 sendMessageButton.addEventListener('click', (e)=> {
     e.preventDefault()
-    if (clientName.value.trim() == '') {
-        clientName.nextElementSibling.textContent = 'Please fill in your name';
-    }
-    if (clientEmail.value.trim() == '') {
-        clientEmail.nextElementSibling.textContent = 'Please fill in your email';
-    }
-    if (clientMobileContact.value.trim() == '') {
-        clientMobileContact.nextElementSibling.textContent = 'Please fill the mobile number';
-    }
-    if (clientAddress.value.trim() == '') {
-        clientAddress.nextElementSibling.textContent = 'Please fill in your address';
-    }
-    if (clientAge.value.trim() == '') {
-        clientAge.nextElementSibling.textContent = 'Please fill in your age';
-    }
-    if (clientScheduledtime.value.trim() == '') {
-        clientScheduledtime.nextElementSibling.textContent = 'Please choose time';
-    }
-    if (clientMessage.value.trim() == '') {
-        clientMessage.nextElementSibling.textContent = 'Please fill in your message';
-    }
     if(!privacyPolicy.checked) {
         privacyPolicy.nextElementSibling.textContent = 'Please verify privacy policies';
     }
-
-    let mobileContactValue = clientMobileContact.value.trim();
-    if (isNaN(mobileContactValue) || mobileContactValue.length !== 10) {
-        clientMobileContact.nextElementSibling.textContent = 'Invalid mobile number';
-    }
-    if (isNaN(clientWhContact.value)) {
-        clientMobileContact.nextElementSibling.textContent = 'Invalid whatsapp number';
-    }
-
+    
     const words = clientMessage.value.trim().split(/\s+/)
     const wordCount = words.length;
     if (wordCount > 255) {
