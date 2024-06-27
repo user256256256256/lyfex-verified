@@ -325,7 +325,7 @@ class AppointmentSection extends HTMLElement {
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Mobile Phone No."   style="height: 55px;">
+                                        <input type="text" class="form-control border-0" id="subject" placeholder="Mobile No."   style="height: 55px;">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
