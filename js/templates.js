@@ -471,6 +471,7 @@ class SiteFooter extends HTMLElement {
                         <a class="btn btn-link" href="appointment.html">Appointment</a>
                         <a class="btn btn-link" href="about.html">About Us</a>
                         <a class="btn btn-link" href="privacy.html">privacy</a>
+                        <a class="btn btn-link" href="payment.html">Payment</a>
                         <a target="_blank" class="btn btn-link" href="https://webmail.lyfexafrica.com"> Web mailer</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
