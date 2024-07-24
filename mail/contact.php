@@ -21,9 +21,6 @@ if (!empty($_POST)) {
         exit();
     }
 
-    // CONFIGURE THE PHP CODE TO SEND EMAILS. 
-    // THE CODE BELOW WAS JUST TEST CODE AND IT MAY NOT WORK.
-
     $to = 'info@lyfexafrica.com';
     $subject = 'New Message: ' . $senderSubject;
     $message = 'Name: ' . $senderName . "\r\n\r\n";

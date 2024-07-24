@@ -87,5 +87,43 @@
             }
         }
     });    
+
+    // payment ovelay
+    const $overlay = $('.payment-overlay');
+    const $overlayTrigger = $('.payment-overlay-trigger');
+    const $btnClose = $overlay.find('.cancelBtn');
+
+    $($overlay).hide();
+
+    $($overlayTrigger).click(function(e) {
+        e.preventDefault();
+
+        $($overlay).fadeIn();
+        // Populate form fields
+        const price = $(this).attr('data-price');
+        const service = $(this).attr('data-service');
+        const currentDate = new Date().toISOString().split('T')[0];
+
+        $('#payment-date').val(currentDate);
+        $('#currency').val(price);
+        $('#service-name').val(service);
+    });
+
+    $(document).mouseup(function(e) {
+        var container = $('.payment-container');
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $($overlay).fadeOut();
+        }
+    });
+
+    $btnClose.on('click', function() {
+        $($overlay).fadeOut();
+    });
+
+    // Prevent form submission for now
+    $('#payment-form').on('submit', function(e) {
+        e.preventDefault();
+        // Handle form submission logic here
+    });
     
 })(jQuery);
