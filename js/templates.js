@@ -5,79 +5,82 @@ class SiteNav extends HTMLElement {
     connectedCallback () {
         this.innerHTML = `
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
-    
-    
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
-            <div class="row gx-0 d-none d-lg-flex">
-                <div class="col-lg-7 px-5 text-start">
-                    <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                        <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                        <small>Kampala, Uganda</small>
-                    </div>
-                    <div class="h-100 d-inline-flex align-items-center py-3">
-                        <small class="far fa-clock text-primary me-2"></small>
-                        <small>Mon - Fri : 09.00 AM - 5.00 PM</small>
-                    </div>
-                </div>
-                <div class="col-lg-5 px-5 text-end">
-                    <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                        <small class="fa fa-phone-alt text-primary me-2"></small>
-                        <small>+256 779185563</small>
-                    </div>
-                    <div class="h-100 d-inline-flex align-items-center">
-                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
-                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
-                        <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Topbar End -->
-    
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-            <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-                <img class="site-logo " src="img/Picture1.png" alt="">
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link ">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="service-one.html" class="dropdown-item">Nuturer Nuturer's Program (NNP)</a>
-                            <a href="service-two.html" class="dropdown-item">Parents's Joy Program (PJP)</a>
-                            <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
-                            <a href="service-four.html" class="dropdown-item">NCD Management</a>
-                            <a href="service-five.html" class="dropdown-item">Tele Nutrition</a>
+    </div>
+    <!-- Spinner End -->
 
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="faqs.html" class="dropdown-item">FAQs</a>
-                           <!--   <a href="blogs.html" class="dropdown-item">Blogs</a> -->
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>Kampala, Uganda</small>
                 </div>
-                <a href="appointment.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Mon - Fri : 09.00 AM - 5.00 PM</small>
+                </div>
             </div>
-        </nav>
-        <!-- Navbar End -->
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+256 779185563</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=61555213810038"><i class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img class="site-logo " src="img/Picture1.png" alt="">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link ">About</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="service-one.html" class="dropdown-item">Nature's Nuturers Program (NNP)</a>
+                        <a href="service-two.html" class="dropdown-item">Parents's Joy Program (PJP)</a>
+                        <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
+                        <a href="service-four.html" class="dropdown-item">NCD Management</a>
+                        <a href="service-five.html" class="dropdown-item">Tele Nutrition</a>
+
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="faqs.html" class="dropdown-item">FAQs</a>
+                       <!--   <a href="blogs.html" class="dropdown-item">Blogs</a> -->
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="d-flex">
+             <a href="appointment.html" class="btn-sm btn-primary rounded-0 py-4 px-lg-4 d-none d-sm-block">Book Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+             <a href="payment.html" class="btn-sm btn-secondary rounded-0 py-4 px-lg-4 d-none d-sm-block">Make Payment<i class="fa fa-arrow-right ms-3"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
         `
     }
 }
@@ -315,9 +318,9 @@ class AppointmentSection extends HTMLElement {
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="bg-light rounded h-100 d-flex align-items-center p-5">
                             <form name="sentMessage" id="contactForm" >
-                                <div class="row g-3">
+                                <div class="row g-3" appoitment-fields>
                                     <div class="col-6 col-sm-6 control-group">
-                                        <input type="text" class="form-control border-0" id="name" placeholder="Name"  style="height: 55px;">
+                                        <input type="text" class="form-control border-0" id="name"  placeholder="Name"  style="height: 55px;">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm- control-group6">
@@ -457,7 +460,7 @@ class SiteFooter extends HTMLElement {
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Services</h5>
-                        <a class="btn btn-link" href="service-one.html">Nuturer Nuturer's Program (NNP)</a>
+                        <a class="btn btn-link" href="service-one.html">Nature's Nuturers Program (NNP)</a>
                         <a class="btn btn-link" href="service-two.html">Parents's Joy Program (PJP)</a>
                         <a class="btn btn-link" href="service-three.html">NutriFinTrancy</a>
                         <a class="btn btn-link" href="service-four.html">NCD Management</a>
@@ -468,6 +471,7 @@ class SiteFooter extends HTMLElement {
                         <a class="btn btn-link" href="appointment.html">Appointment</a>
                         <a class="btn btn-link" href="about.html">About Us</a>
                         <a class="btn btn-link" href="privacy.html">privacy</a>
+                        <a target="_blank" class="btn btn-link" href="https://webmail.lyfexafrica.com"> Web mailer</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Lyfex-Africa</h5>

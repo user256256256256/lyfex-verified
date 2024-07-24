@@ -48,11 +48,8 @@ if (!empty($_POST)) {
     }
   }
 
-  // CONFIGURE THE PHP CODE TO SEND EMAILS. 
-  // THE CODE BELOW WAS JUST TEST CODE AND IT MAY NOT WORK.
-
   $to = 'info@lyfexafrica.com'; 
-  $subject = 'Contact Form Submission';
+  $subject = "New Appointment From: $clientName";
   $message = "
     Client Name: $clientName
     Client Email: $clientEmail
@@ -70,14 +67,24 @@ if (!empty($_POST)) {
   $mailSent = mail($to, $subject, $message, $headers);
 
   if ($mailSent) {
-    echo json_encode(['success' => 'Mail Sent Successfully !']);
-  } else {
-    echo json_encode(['error' => 'Failed to connect to server !']);
-    exit();
-  }
 
-  die();
+    echo json_encode(['success' => 'Mail recieved successfully !']);
+
+    // Send automatic response to the client
+    try {
+      $clientResponseSubject = 'Thank you for your inquiry';
+      $clientResponseMessage = "Dear $clientName,\r\n\r\nThank you for contacting us. We have received your message and will get back to you as soon as possible.\r\n\r\nBest regards,\r\nLyfex Africa Team";
+
+      $clientResponseHeaders = "From: info@lyfexafrica.com\r\n";
+      $clientResponseSent = mail($clientEmail, $clientResponseSubject, $clientResponseMessage, $clientResponseHeaders);
+
+    } catch (Exception $e) {
+    throw new Exception($e->getMessage());
+    }
+
+  exit();
   
 } else {
   echo json_encode(['error' => 'Failed to connect to server !']);
+}
 }

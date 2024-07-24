@@ -51,6 +51,11 @@ sendMessageButton.addEventListener('click', (e)=> {
         if (data.success) {
             statusMessage.classList.add('text-success')
             statusMessage.textContent = data.success
+
+            // refresh page
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
         } else {
             statusMessage.classList.add('text-danger')
             statusMessage.textContent = data.error
@@ -58,6 +63,7 @@ sendMessageButton.addEventListener('click', (e)=> {
     })
     .catch(error => {
         console.error('Error', error)
+        statusMessage.textContent = error;
     })
 
 })
