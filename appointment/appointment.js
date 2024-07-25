@@ -17,12 +17,14 @@ sendMessageButton.addEventListener('click', (e)=> {
     e.preventDefault()
     if(!privacyPolicy.checked) {
         privacyPolicy.nextElementSibling.textContent = 'Please verify privacy policies';
+        return;
     }
     
     const words = clientMessage.value.trim().split(/\s+/)
     const wordCount = words.length;
     if (wordCount > 255) {
-        privacyPolicy.nextElementSibling.textContent = 'Use less than 255 words';
+        clientMessage.nextElementSibling.textContent = 'Use less than 255 words';
+        return;
     }
 
     const statusMessage = document.getElementById('status-message')

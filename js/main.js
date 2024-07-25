@@ -120,10 +120,10 @@
         $($overlay).fadeOut();
     });
 
-    // Prevent form submission for now
-    $('#payment-form').on('submit', function(e) {
-        e.preventDefault();
-        // Handle form submission logic here
-    });
+    // // Prevent form submission for now
+    // $('#payment-form').on('submit', function(e) {
+    //     e.preventDefault();
+    //     // Handle form submission logic here
+    // });
     
 })(jQuery);
