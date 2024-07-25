@@ -54,6 +54,7 @@ class SiteNav extends HTMLElement {
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link ">About</a>
+                <a href="nutri-fintracy.html" class="nav-item nav-link ">Nutri-Fin</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
@@ -62,6 +63,7 @@ class SiteNav extends HTMLElement {
                         <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
                         <a href="service-four.html" class="dropdown-item">NCD Management</a>
                         <a href="service-five.html" class="dropdown-item">Tele Nutrition</a>
+                        
 
                     </div>
                 </div>
@@ -437,6 +439,187 @@ customElements.define('appointment-section', AppointmentSection)
 //     }
 // }
 // customElements.define('testimonial-section', TestimonialSection)
+
+// nutiFin services
+class NutriFinTracyServices extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Key Features</p>
+                <h1>NutriFinTrancy</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-credit-card text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Budgeting for Nutrition</h4>
+                        <p class="mb-4">Helping families create budgets that prioritize nutritious food choices. </p>
+                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-shopping-cart text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Smart Shopping Guidance</h4>
+                        <p class="mb-4">Tips and strategies for making healthy, cost-effective food purchases. </p>
+                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-credit-card text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Savings Plans</h4>
+                        <p class="mb-4">Designing savings programs specifically for nutritional needs to ensure long-term food security and health. </p>
+                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-brain text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Financial Wellness Education</h4>
+                        <p class="mb-4">Providing tools and resources to help families make informed financial decisions related to their dietary habits. </p>
+                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+        `
+    }
+}
+customElements.define('nutri-services', NutriFinTracyServices);
+
+// Payments tab
+class Paymentpage extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <!-- Payment Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block  border rounded-pill py-1 px-4">Make payments Easily !</p>
+                <h1 class="text-primary">LA-NutriFin </h1>
+                <p>At Lyfex Africa, we empower Ugandan individuals and families with comprehensive nutrition therapy and nutrifintrancy services for optimal health. Introducing LA-NutriFin—a fintech-integrated product—to streamline payments and enhance service accessibility.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3">
+                            <span class="text-secondary fs-4">30,000UGX</span>
+                        </div>
+                        <h4 class="mb-3">(Tele Nutrition) Initial Online Consultation Session</h4>
+                        <p class="mb-4">Book a 30-minute online consultation to discuss your needs with a nutritionist. 
+                            What to Expect: Convenient virtual meeting, secure online payment, and initial assessment of your nutritional needs.
+                        </p>
+                        <a class="btn payment-overlay-trigger" href="#" data-price="30,000UGX" data-service="Monthly subsription">
+                            <i class="fa fa-plus text-primary me-3"></i>Pay</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3">
+                            <span class="price text-secondary fs-4">100,000UGX</span>
+                        </div>
+                        <h4 class="service-name" class="mb-3">Physical Session at the Nutrition Clinic</h4>
+                        <p class="mb-4">Schedule a 1-hour session at any of our nutrition clinics for a thorough nutrition and financial examination.
+                            What to Expect: Comprehensive nutritional assessment, personalized work plan creation, including meal plans, habit score cards, exercise routines and a NutriFin report.
+                        </p>
+                        <a class="btn payment-overlay-trigger" href="#" data-price="100,000UGX" data-service="Physical Session">
+                            <i class="fa fa-plus text-primary me-3"></i>Pay</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" >
+                            <span class="price text-secondary fs-4">60,000UGX</span>
+                        </div>
+                        <h4 class="service-name mb-3">Reports and Follow-Up Sessions</h4>
+                        <p class="mb-4">Receive detailed reports and participate in regular follow-up sessions to monitor progress and adjust plans.
+                            What to Expect: Bi-weekly follow-ups for the first 3 months, monthly follow-ups for the next 3 months, continuous support and adjustments as needed.
+                        </p>
+                        <a class="btn payment-overlay-trigger" href="#" data-price="60,000UGX" data-service="Follow-Up Sessions">
+                            <i class="fa fa-plus text-primary me-3"></i>Pay</a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3">
+                            <span class="text-secondary fs-4">100,000UGX</span>
+                        </div>
+                        <h4 class="mb-3">Personalized Nutrition Plans</h4>
+                        <p class="mb-4">Tailored dietary recommendations to meet the specific nutritional needs of mothers.</p>
+                        <a class="btn payment-overlay" href=""><i class="fa fa-plus text-primary me-3"></i>Make payment/a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Payment End -->
+        `
+    }
+}
+customElements.define('payment-page', Paymentpage)
+
+class PaymentOverlay extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+         <!-- payment overlay start -->
+    <div class="payment-overlay">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <div class="bg-light rounded d-flex flex-column px-5 py-2 payment-container">
+                    <form id="payment-form">
+                        <p class="btn cancelBtn text-end text-danger">Cancel</p>
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-6">
+                                <input type="text" class="form-control border-0" id="payment-date" placeholder="" style="height: 55px;" readonly>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                                <input type="text" class="form-control border-0" id="name" placeholder="Name" style="height: 55px;">
+                            </div>
+                            <div class="col-6 col-sm-6">
+                                <input type="text" class="form-control border-0" id="currency" placeholder="" style="height: 55px;" readonly>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                                <input type="text" class="form-control border-0" id="service-name" placeholder="" style="height: 55px;" readonly>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                                <input type="email" class="form-control border-0" id="email" placeholder="Email" style="height: 55px;">
+                            </div>
+                            <div class="col-6 col-sm-6">
+                                <input type="mobile-no" class="form-control border-0" id="mobile-no" placeholder="Mobile money No." style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control border-0" rows="5" id="message" placeholder="Comment!"></textarea>
+                            </div>
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                                <button class="btn btn-secondary py-3" type="submit" id="initiate-payment">Complete Payment</button>
+                            </div>
+                            <p id="payment-status-message" class="text-center py-3 px-5"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- payment overlay end -->
+        `
+    }
+}
+customElements.define('payment-overlay', PaymentOverlay)
+
 
 // site footer
 class SiteFooter extends HTMLElement {
