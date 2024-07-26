@@ -54,7 +54,7 @@ class SiteNav extends HTMLElement {
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link ">About</a>
-                <a href="nutri-fintracy.html" class="nav-item nav-link ">Nutri-Fin</a>
+                <a href="nutri-fintracy.html" class="nav-item nav-link ">LA-NutriFin</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
@@ -77,8 +77,8 @@ class SiteNav extends HTMLElement {
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
             <div class="d-flex">
-             <a href="appointment.html" class="btn-sm btn-primary rounded-0 py-4 px-lg-4 d-none d-sm-block">Book Appointment<i class="fa fa-arrow-right ms-3"></i></a>
-             <a href="payment.html" class="btn-sm btn-secondary rounded-0 py-4 px-lg-4 d-none d-sm-block">Make Payment<i class="fa fa-arrow-right ms-3"></i></a>
+             <a href="appointment.html" class="btn-sm btn-primary rounded-0 py-4 px-lg-4 d-sm-block">Book Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+             <a href="payment.html" class="btn-sm btn-secondary rounded-0 py-4 px-lg-4 d-sm-block">Make Payment<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </div>
     </nav>
@@ -449,7 +449,7 @@ class NutriFinTracyServices extends HTMLElement {
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded-pill py-1 px-4">Key Features</p>
-                <h1>NutriFinTrancy</h1>
+                <h1>NutriFinTrancy Services</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -523,8 +523,8 @@ class Paymentpage extends HTMLElement {
                         <p class="mb-4">Book a 30-minute online consultation to discuss your needs with a nutritionist. 
                             What to Expect: Convenient virtual meeting, secure online payment, and initial assessment of your nutritional needs.
                         </p>
-                        <a class="btn payment-overlay-trigger" href="#" data-price="30,000UGX" data-service="Monthly subsription">
-                            <i class="fa fa-plus text-primary me-3"></i>Pay</a>
+                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="30,000UGX" data-service="Tele Nutrition">
+                            <i class="fa fa-plus text-white me-3"></i>Pay</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -536,33 +536,23 @@ class Paymentpage extends HTMLElement {
                         <p class="mb-4">Schedule a 1-hour session at any of our nutrition clinics for a thorough nutrition and financial examination.
                             What to Expect: Comprehensive nutritional assessment, personalized work plan creation, including meal plans, habit score cards, exercise routines and a NutriFin report.
                         </p>
-                        <a class="btn payment-overlay-trigger" href="#" data-price="100,000UGX" data-service="Physical Session">
-                            <i class="fa fa-plus text-primary me-3"></i>Pay</a>
+                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="100,000UGX" data-service="Physical Session">
+                            <i class="fa fa-plus text-white me-3"></i>Pay</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center mb-3" >
-                            <span class="price text-secondary fs-4">60,000UGX</span>
+                            <span class="price text-secondary fs-4">80,000UGX</span>
                         </div>
                         <h4 class="service-name mb-3">Reports and Follow-Up Sessions</h4>
                         <p class="mb-4">Receive detailed reports and participate in regular follow-up sessions to monitor progress and adjust plans.
                             What to Expect: Bi-weekly follow-ups for the first 3 months, monthly follow-ups for the next 3 months, continuous support and adjustments as needed.
                         </p>
-                        <a class="btn payment-overlay-trigger" href="#" data-price="60,000UGX" data-service="Follow-Up Sessions">
-                            <i class="fa fa-plus text-primary me-3"></i>Pay</a>
+                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="80,000UGX" data-service="Follow-Up Sessions">
+                            <i class="fa fa-plus text-white me-3"></i>Pay</a>
                     </div>
                 </div>
-                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-light rounded h-100 p-5">
-                        <div class="d-inline-flex align-items-center justify-content-center mb-3">
-                            <span class="text-secondary fs-4">100,000UGX</span>
-                        </div>
-                        <h4 class="mb-3">Personalized Nutrition Plans</h4>
-                        <p class="mb-4">Tailored dietary recommendations to meet the specific nutritional needs of mothers.</p>
-                        <a class="btn payment-overlay" href=""><i class="fa fa-plus text-primary me-3"></i>Make payment/a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -645,7 +635,7 @@ class SiteFooter extends HTMLElement {
                         <h5 class="text-light mb-4">Services</h5>
                         <a class="btn btn-link" href="service-one.html">Nature's Nuturers Program (NNP)</a>
                         <a class="btn btn-link" href="service-two.html">Parents's Joy Program (PJP)</a>
-                        <a class="btn btn-link" href="service-three.html">NutriFinTrancy</a>
+                        <a class="btn btn-link" href="nutri-fintracy.html">LA-NutriFin</a>
                         <a class="btn btn-link" href="service-four.html">NCD Management</a>
                         <a class="btn btn-link" href="service-five.html">Tele Nutrition</a>
                     </div>
