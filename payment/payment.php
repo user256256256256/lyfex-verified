@@ -34,8 +34,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         echo json_encode(['error' => 'Message should contain less than 100 words!']);
         exit();
     }
+    
 
-    echo json_encode(['success' => 'Intiated successfully !']);
+    /* 
+    End Point: https://eurosatpay.eurosatgroup.com/api/coreapi.aspx
+    Content: 
+    {
+    “payrefno”: “{0}”,
+    "paydate”: “{1}”,
+    "payamount”: “{2}”,
+    "payphoneno”: “{3}”,
+    "paycurrency”: “{4}”,
+    "particulars”:”{5}”,
+    "userkey”:”xxxx”,
+    "authkey”:”yyyyy”
+    }
+
+
+    The Reply JSON is in the following format depending on transaction status:
+    Successful:
+    {“code”:”200”,”Message”:”Collection 676878 Initiated”}
+    Transaction Error:
+    {“code”:”400”,”Message”:”Data Error! xxxxx”}
+
+    {
+    “transactionID”: “8897373”,
+    “amount”: “30000”,
+    “refno”: “787878”,
+    “narration”: “Payment of fees”,
+    “date_approved”: “2024-07-15”
+    }
+
+    */
+
+    // echo json_encode(['success' => 'Intiated successfully !']);
 
 } else {
   echo json_encode(['error' => 'Failed to connect to server !']);
