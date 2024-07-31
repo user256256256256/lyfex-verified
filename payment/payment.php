@@ -54,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         'userkey' => 'lyfex',
         'authkey' => '4afc426b-ec76-42e8-a1f3-0fc9c298c75c'
     ];
-
     $initiateJsonData = json_encode($initiateData);
 
     $initiateCurl = curl_init($initiateEndpoint);
@@ -156,5 +155,5 @@ function isValidMobileNumber($mobileNo) {
 // Function to generate a numeric payrefno
 function generateNumericPayrefno() {
     // You can use a more complex logic if needed
-    return strval(rand(1000000000, 9999999999));
+    return strval(rand(100000, 999999));
 }
