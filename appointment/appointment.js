@@ -51,6 +51,7 @@ sendMessageButton.addEventListener('click', (e)=> {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
+            statusMessage.classList.remove('text-danger')
             statusMessage.classList.add('text-success')
             statusMessage.textContent = data.success
 
@@ -59,6 +60,7 @@ sendMessageButton.addEventListener('click', (e)=> {
                 window.location.reload();
             }, 5000);
         } else {
+            statusMessage.classList.remove('text-success')
             statusMessage.classList.add('text-danger')
             statusMessage.textContent = data.error
         }

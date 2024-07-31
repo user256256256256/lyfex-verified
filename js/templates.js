@@ -523,7 +523,7 @@ class Paymentpage extends HTMLElement {
                         <p class="mb-4">Book a 30-minute online consultation to discuss your needs with a nutritionist. 
                             What to Expect: Convenient virtual meeting, secure online payment, and initial assessment of your nutritional needs.
                         </p>
-                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="30,000UGX" data-service="Tele Nutrition">
+                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="30,000" data-service="Tele Nutrition">
                             <i class="fa fa-plus text-white me-3"></i>Pay</a>
                     </div>
                 </div>
@@ -536,7 +536,7 @@ class Paymentpage extends HTMLElement {
                         <p class="mb-4">Schedule a 1-hour session at any of our nutrition clinics for a thorough nutrition and financial examination.
                             What to Expect: Comprehensive nutritional assessment, personalized work plan creation, including meal plans, habit score cards, exercise routines and a NutriFin report.
                         </p>
-                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="100,000UGX" data-service="Physical Session">
+                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="100,000" data-service="Physical Session">
                             <i class="fa fa-plus text-white me-3"></i>Pay</a>
                     </div>
                 </div>
@@ -549,7 +549,7 @@ class Paymentpage extends HTMLElement {
                         <p class="mb-4">Receive detailed reports and participate in regular follow-up sessions to monitor progress and adjust plans.
                             What to Expect: Bi-weekly follow-ups for the first 3 months, monthly follow-ups for the next 3 months, continuous support and adjustments as needed.
                         </p>
-                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="80,000UGX" data-service="Follow-Up Sessions">
+                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="80,000" data-service="Follow-Up Sessions">
                             <i class="fa fa-plus text-white me-3"></i>Pay</a>
                     </div>
                 </div>
@@ -580,7 +580,10 @@ class PaymentOverlay extends HTMLElement {
                                 <input type="text" class="form-control border-0" id="name" placeholder="Name" style="height: 55px;">
                             </div>
                             <div class="col-6 col-sm-6">
-                                <input type="text" class="form-control border-0" id="currency" placeholder="" style="height: 55px;" readonly>
+                                <input type="text" class="form-control border-0" id="price" placeholder="" style="height: 55px;" readonly>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                                <input type="text" class="form-control border-0" id="currency" placeholder="UGX" style="height: 55px;" readonly>
                             </div>
                             <div class="col-6 col-sm-6">
                                 <input type="text" class="form-control border-0" id="service-name" placeholder="" style="height: 55px;" readonly>
