@@ -80,6 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Close cURL session for collection initiation
     curl_close($initiateCurl);
 
+    error_log('Raw API Response: ' . $initiateResponse);
+
     // Decode the response JSON for collection initiation
     $initiateResponseData = json_decode($initiateResponse, true);
 
