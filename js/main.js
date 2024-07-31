@@ -104,8 +104,9 @@
         const service = $(this).attr('data-service');
         const currentDate = new Date().toISOString().split('T')[0];
 
+        $('#currency').val('UGX')
         $('#payment-date').val(currentDate);
-        $('#currency').val(price);
+        $('#price').val(price);
         $('#service-name').val(service);
     });
 

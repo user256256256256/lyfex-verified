@@ -72,16 +72,16 @@ if (!empty($_POST)) {
             throw new Exception('Failed to send email.');
         }
 
-        // Send automatic response to the client
-        $clientResponseSubject = 'Thank you for your inquiry';
-        $clientResponseMessage = "Dear $clientName,\r\n\r\nThank you for contacting us. We have received your message and will get back to you as soon as possible.\r\n\r\nBest regards,\r\nLyfex Africa Team";
+        // // Send automatic response to the client
+        // $clientResponseSubject = 'Thank you for your inquiry';
+        // $clientResponseMessage = "Dear $clientName,\r\n\r\nThank you for contacting us. We have received your message and will get back to you as soon as possible.\r\n\r\nBest regards,\r\nLyfex Africa Team";
 
-        $clientResponseHeaders = "From: info@lyfexafrica.com\r\n";
-        $clientResponseSent = mail($clientEmail, $clientResponseSubject, $clientResponseMessage, $clientResponseHeaders);
+        // $clientResponseHeaders = "From: info@lyfexafrica.com\r\n";
+        // $clientResponseSent = mail($clientEmail, $clientResponseSubject, $clientResponseMessage, $clientResponseHeaders);
 
-        if (!$clientResponseSent) {
-            throw new Exception('Failed to send automatic response email.');
-        }
+        // if (!$clientResponseSent) {
+        //     throw new Exception('Failed to send automatic response email.');
+        // }
 
         echo json_encode(['success' => 'Mail received successfully!']);
         exit();

@@ -2,6 +2,7 @@ $(document).ready(function() {
     // Accessing input fields by their IDs
     var $paymentDate = $('#payment-date');
     var $name = $('#name');
+    var $price = $('#price');
     var $currency = $('#currency');
     var $serviceName = $('#service-name');
     var $email = $('#email');
@@ -43,6 +44,7 @@ $(document).ready(function() {
 
         formData.append('payment-date', $($paymentDate).val().trim());
         formData.append('name', $($name).val().trim());
+        formData.append('price', $($price).val().trim());
         formData.append('currency', $($currency).val().trim());
         formData.append('service-name', $($serviceName).val().trim());
         formData.append('email', $($email).val().trim());
