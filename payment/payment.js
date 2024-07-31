@@ -8,7 +8,13 @@ $(document).ready(function() {
     var $email = $('#email');
     var $mobileNo = $('#mobile-no');
     var $message = $('#message');
+    var $paymentBtn = $('#initiate-payment');
+    var $statusMessage = $('#payment-status-message');
 
+    // Disable the payment button initially
+    $paymentBtn.prop('disabled', false);
+
+    // Input validation for mobile number
     $($mobileNo).on('keydown', function(event) {
         // Get current input value and its length
         let inputValue = $(this).val();
@@ -34,11 +40,9 @@ $(document).ready(function() {
         }
     });
 
-
-    $('#initiate-payment').click(function(event) {
+    $paymentBtn.click(function(event) {
         event.preventDefault(); 
-
-        var $statusMessage = $('#payment-status-message');
+        console.log(true);
 
         var formData = new URLSearchParams();
 
@@ -62,6 +66,11 @@ $(document).ready(function() {
         .then(data => {
             // Handle success response
             if (data.success) {
+                // if (data.success === 'Enter pin on your phone') {
+                //     // Enable the payment button when the condition is met
+                //     $paymentBtn.prop('disabled', true);
+                // } 
+
                 $statusMessage.removeClass('text-danger');
                 $statusMessage.addClass('text-success');
                 $statusMessage.text(data.success);
@@ -75,8 +84,7 @@ $(document).ready(function() {
         .catch(error => {
             // Handle error response
             console.error('Error', error);
-            $statusMessage.text(error);
+            $statusMessage.text('An error occurred');
         });
-    })
-    
+    });
 });
