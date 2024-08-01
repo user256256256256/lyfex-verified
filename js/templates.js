@@ -523,7 +523,7 @@ class Paymentpage extends HTMLElement {
                         <p class="mb-4">Book a 30-minute online consultation to discuss your needs with a nutritionist. 
                             What to Expect: Convenient virtual meeting, secure online payment, and initial assessment of your nutritional needs.
                         </p>
-                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="30000" data-service="Tele Nutrition">
+                        <a class="btn payment-overlay-trigger bg-primary text-white" href="#" data-price="300" data-service="Tele Nutrition">
                             <i class="fa fa-plus text-white me-3"></i>Pay</a>
                     </div>
                 </div>
