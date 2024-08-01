@@ -68,6 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 
     $initiateResponse = curl_exec($initiateCurl);
 
+    // this is the kin
+    /* {"code":"200","Message":"Collection #{"data":{"transaction":{"id":"100001254851247","status":"Success."}},
+        "status":{"response_code":"DP00800001006",
+        "code":"200","success":true,"result_code":"ESB000010","message":"Success."}} Initiated"} 
+    */
+    
+
     if (curl_errno($initiateCurl)) {
         echo json_encode(['error' => 'cURL Error: ' . curl_error($initiateCurl)]);
         curl_close($initiateCurl);
@@ -83,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     if (strpos($initiateResponse, '"code":"200"') !== false) {
         // Success in initiating collection
         echo json_encode(['success' => 'Enter pin on your phone']);
+        exit();
     } else {
         // Extract error message from the response
         if (preg_match('/"Message":"(.*?)"/', $initiateResponse, $matches)) {
@@ -94,49 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         http_response_code(500); // Internal Server Error
     }
 
-} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty(file_get_contents('php://input'))) {
-    // Handle callback
-    $input = file_get_contents('php://input');
-
-    echo json_encode(['error' => $input]);
-
-    // echo json_encode(['success' => $input]);
-
-    // Log raw input for debugging
-    error_log('Raw Callback Input: ' . $input);
-
-    $data = json_decode($input, true);
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        error_log('JSON Decode Error: ' . json_last_error_msg());
-        echo json_encode(['error' => 'Invalid JSON']);
-        http_response_code(400); // Bad Request
-        exit();
-    }
-
-    // Log decoded data for debugging
-    error_log('Decoded Callback Data: ' . print_r($data, true));
-
-    // Validate the incoming callback data
-    if (!isset($data['transactionID']) || !isset($data['amount']) || !isset($data['refno']) || !isset($data['narration']) || !isset($data['date_approved'])) {
-        error_log('Invalid data received in callback: ' . print_r($data, true));
-        echo json_encode(['error' => 'Invalid data']);
-        http_response_code(400); // Bad Request
-        exit();
-    }
-
-    // Extract data
-    $transactionID = $data['transactionID'];
-    $amount = $data['amount'];
-    $refno = $data['refno'];
-    $narration = $data['narration'];
-    $dateApproved = $data['date_approved'];
-
-    // Log the callback data for debugging
-    error_log('Callback Data: ' . print_r($data, true));
-
-    echo json_encode(['success' => 'Callback received successfully']);
-    http_response_code(200); // OK
-} else {
+}  else {
     echo json_encode(['error' => 'Invalid request']);
 }
 
