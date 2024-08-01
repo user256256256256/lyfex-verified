@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 
     $initiateResponse = curl_exec($initiateCurl);
 
-    // this is the kin
+    // this is the expected type of reply
     /* {"code":"200","Message":"Collection #{"data":{"transaction":{"id":"100001254851247","status":"Success."}},
         "status":{"response_code":"DP00800001006",
         "code":"200","success":true,"result_code":"ESB000010","message":"Success."}} Initiated"} 
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
         // Success in initiating collection
-        echo json_encode(['success' => 'Enter pin on your phone']);
+        echo json_encode(['success' => 'Enter pin on your phone to confirm trasaction!']);
         exit();
     } else {
         // Extract error message from the response

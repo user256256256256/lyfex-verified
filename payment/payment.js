@@ -66,15 +66,42 @@ $(document).ready(function() {
         .then(data => {
             // Handle success response
             if (data.success) {
-                // if (data.success === 'Enter pin on your phone') {
-                //     // Enable the payment button when the condition is met
-                //     $paymentBtn.prop('disabled', true);
-                // } 
-
                 $statusMessage.removeClass('text-danger');
                 $statusMessage.addClass('text-success');
                 $statusMessage.text(data.success);
 
+            } else {
+                $statusMessage.removeClass('text-success');
+                $statusMessage.addClass('text-danger');
+                $statusMessage.text(data.error);
+            }
+        })
+        .catch(error => {
+            // Handle error response
+            console.error('Error', error);
+            $statusMessage.text('An error occurred');
+        });
+
+        fetch('payment/payment.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle success response
+            if (data.success) {
+
+                $statusMessage.removeClass('text-danger');
+                $statusMessage.addClass('text-success');
+                $statusMessage.text(data.success);
+                $paymentBtn.prop('disabled', true);
+                
+                setTimeout(() => {
+                    window.location.reload();
+                }, 10000);
             } else {
                 $statusMessage.removeClass('text-success');
                 $statusMessage.addClass('text-danger');

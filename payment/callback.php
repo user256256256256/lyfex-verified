@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty(file_get_contents('php://input'))) {
     $input = file_get_contents('php://input');
     
@@ -38,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty(file_get_contents('php://inp
             exit();
         }
     }
-
     // Extract data
     $transactionID = $data['transactionID'];
     $amount = $data['amount'];
