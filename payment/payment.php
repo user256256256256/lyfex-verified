@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
         // Success in initiating collection
-        echo json_encode(['success' => 'Enter pin on your phone to confirm trasaction!']);
+        echo json_encode(['success' => 'Enter pin on your phone to confirm transaction!']);
         exit();
     } else {
         // Extract error message from the response
