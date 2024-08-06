@@ -81,37 +81,50 @@ $(document).ready(function() {
             console.error('Error', error);
             $statusMessage.text('An error occurred');
         });
-
-        fetch('payment/payment.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle success response
-            if (data.success) {
-
-                $statusMessage.removeClass('text-danger');
-                $statusMessage.addClass('text-success');
-                $statusMessage.text(data.success);
-                $paymentBtn.prop('disabled', true);
-                
-                setTimeout(() => {
-                    window.location.reload();
-                }, 10000);
-            } else {
-                $statusMessage.removeClass('text-success');
-                $statusMessage.addClass('text-danger');
-                $statusMessage.text(data.error);
-            }
-        })
-        .catch(error => {
-            // Handle error response
-            console.error('Error', error);
-            $statusMessage.text('An error occurred');
-        });
     });
+
+    fetchPaymentCallback();
+
+    function fetchPaymentCallback() {
+    const url = 'payment/callback.php'; // URL to the PHP file
+
+    fetch(url, {
+        method: 'GET', 
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        // Check if the response is ok (status code in the range 200-299)
+        if (!response.ok) {
+            return response.text().then(text => {
+                throw new Error(`HTTP error! Status: ${response.status}. Message: ${text}`);
+            });
+        }
+        // Parse the JSON from the response
+        return response.json();
+    })
+    .then(data => {
+        // Log or handle the JSON data
+        if (data.success) {
+            $statusMessage.removeClass('text-danger');
+            $statusMessage.addClass('text-success');
+            $statusMessage.text(data.success);
+            $paymentBtn.prop('disabled', true);
+            setTimeout(() => {
+                window.location.reload();
+            }, 10000);
+        } else {
+            $statusMessage.removeClass('text-success');
+            $statusMessage.addClass('text-danger');
+            $statusMessage.text(data.error);
+        }
+    })
+    .catch(error => {
+        // Handle errors here
+        console.error('Fetch error:', error);
+    });
+    }
+
 });
+

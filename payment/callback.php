@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty(file_get_contents('php://input'))) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' || !empty(file_get_contents('php://input')) || ['REQUEST_METHOD'] === 'GET') {
     $input = file_get_contents('php://input');
     
     // Log raw input for debugging
@@ -49,7 +49,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty(file_get_contents('php://inp
     // Log the callback data for debugging
     error_log('Callback Data: ' . print_r($data, true));
 
-    echo json_encode(['success' => 'Callback received successfully']);
+    $transactionData = json_encode([
+        'transactionID' => $transactionID,
+        'amount' => $amount,
+        'refno' => $refno,
+        'narration' => $narration,
+        'date_approved' => $dateApproved
+    ]);
+
+    echo json_encode(['success' => 'Trasanction is successful']);
+
+    // send data to email
+
     http_response_code(200); // OK
 
 } else {
