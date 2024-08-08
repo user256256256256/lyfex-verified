@@ -10,6 +10,7 @@ $(document).ready(function() {
     var $message = $('#message');
     var $paymentBtn = $('#initiate-payment');
     var $statusMessage = $('#payment-status-message');
+    var $trasactionStatus = $('#transaction-status-message')
 
     // Disable the payment button initially
     $paymentBtn.prop('disabled', false);
@@ -42,7 +43,15 @@ $(document).ready(function() {
 
     $paymentBtn.click(function(event) {
         event.preventDefault(); 
-        console.log(true);
+
+        // Basic validation
+        if (!$paymentDate.val().trim() || !$name.val().trim() || !$price.val().trim() || 
+            !$currency.val().trim() || !$serviceName.val().trim() || !$email.val().trim() || 
+            !$mobileNo.val().trim() || !$message.val().trim()) {
+            $statusMessage.removeClass('text-success').addClass('text-danger');
+            $statusMessage.text('Please fill all required fields.');
+            return;
+        }
 
         var formData = new URLSearchParams();
 
@@ -66,13 +75,18 @@ $(document).ready(function() {
         .then(data => {
             // Handle success response
             if (data.success) {
-                $statusMessage.removeClass('text-danger');
-                $statusMessage.addClass('text-success');
+                $statusMessage.removeClass('text-danger').addClass('text-success');
                 $statusMessage.text(data.success);
-
+                $paymentBtn.prop('disabled', true);
+                setTimeout(() => {
+                    $trasactionStatus.text("Trasction Pending...")
+                }, 10000);
+                setTimeout(() => {
+                    fetchPaymentCallback();
+                    $trasactionStatus.text("Transaction Loading...")
+                }, 20000); 
             } else {
-                $statusMessage.removeClass('text-success');
-                $statusMessage.addClass('text-danger');
+                $statusMessage.removeClass('text-success').addClass('text-danger');
                 $statusMessage.text(data.error);
             }
         })
@@ -82,49 +96,36 @@ $(document).ready(function() {
             $statusMessage.text('An error occurred');
         });
     });
-
-    fetchPaymentCallback();
-
+    
     function fetchPaymentCallback() {
-    const url = 'payment/callback.php'; // URL to the PHP file
-
-    fetch(url, {
-        method: 'GET', 
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => {
-        // Check if the response is ok (status code in the range 200-299)
-        if (!response.ok) {
-            return response.text().then(text => {
-                throw new Error(`HTTP error! Status: ${response.status}. Message: ${text}`);
-            });
-        }
-        // Parse the JSON from the response
-        return response.json();
-    })
-    .then(data => {
-        // Log or handle the JSON data
-        if (data.success) {
-            $statusMessage.removeClass('text-danger');
-            $statusMessage.addClass('text-success');
-            $statusMessage.text(data.success);
-            $paymentBtn.prop('disabled', true);
-            setTimeout(() => {
-                window.location.reload();
-            }, 10000);
-        } else {
-            $statusMessage.removeClass('text-success');
-            $statusMessage.addClass('text-danger');
-            $statusMessage.text(data.error);
-        }
-    })
-    .catch(error => {
-        // Handle errors here
-        console.error('Fetch error:', error);
-    });
+        // Create a JavaScript object to send as JSON
+        const data = {
+            email: $($email).val().trim(),
+            name: $($name).val().trim(),
+            serviceName: $($serviceName).val().trim()
+        };
+    
+        // Send the data as JSON
+        fetch('payment/callback.php', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Convert the data object to a JSON string
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle success response
+            if (data.success) {
+                $trasactionStatus.text(data.success);
+            } else {
+                $trasactionStatus.text(data.error);
+            }
+        })
+        .catch(error => {
+            // Handle error response
+            console.error('Error', error);
+            $trasactionStatus.text('An error occurred');
+        });
     }
-
 });
-

@@ -119,6 +119,7 @@
 
     $btnClose.on('click', function() {
         $($overlay).fadeOut();
+        window.location.reload();
     });
 
     // // Prevent form submission for now
