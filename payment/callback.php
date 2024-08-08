@@ -15,18 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check for Eurosat Pay request
     if (isset($data['transactionID'], $data['amount'], $data['refno'], $data['narration'], $data['date_approved'])) {
-        // Process Eurosat Pay transaction data
-        $transactionID = htmlspecialchars($data['transactionID']);
-        $amount = htmlspecialchars($data['amount']);
-        $refno = htmlspecialchars($data['refno']);
-        $narration = htmlspecialchars($data['narration']);
-        $dateApproved = htmlspecialchars($data['date_approved']);
 
         // Simulate transaction status (this would be replaced by actual logic)
         $transactionStatus = 'success'; // or 'failure'
 
         // Store the transaction status in the session
         $_SESSION['transactionStatus'] = $transactionStatus;
+        
+        // Process Eurosat Pay transaction data
+        $transactionID = htmlspecialchars($data['transactionID']);
+        $amount = htmlspecialchars($data['amount']);
+        $refno = htmlspecialchars($data['refno']);
+        $narration = htmlspecialchars($data['narration']);
+        $dateApproved = htmlspecialchars($data['date_approved']);
 
         // if session exists then send an email => only when the trasaction status wasn't found.
         if (isset($_SESSION['name']) && isset($_SESSION['serviceName']) && isset($_SESSION['email'])) {
