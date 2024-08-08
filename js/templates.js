@@ -600,7 +600,8 @@ class PaymentOverlay extends HTMLElement {
                             <div class="col-12 d-flex align-items-center justify-content-center">
                                 <button class="btn btn-secondary py-3" type="submit" id="initiate-payment">Complete Payment</button>
                             </div>
-                            <p id="payment-status-message" class="text-center py-3 px-5"></p>
+                            <p id="payment-status-message" class="text-center py-1 px-2"></p>
+                            <p id="transaction-status-message" class="text-center py-1 px-2 text-info"></p>
                         </div>
                     </form>
                 </div>
