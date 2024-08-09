@@ -1,117 +1,89 @@
 <?php
-session_start(); // Start session to store transaction status
+session_start(); // Start session to store transaction data
 
-// Handle POST requests
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Read and decode JSON input
+
+    $_SESSION['transactionStatus'] = 'success';
+
+    // Handle POST requests
     $input = file_get_contents('php://input');
+    
+    if (!$input) {
+        echo json_encode(['error' => 'No data received, Transaction Status: Not known, contact support']);
+        http_response_code(400);
+        exit();
+    }
+
     $data = json_decode($input, true);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
-        echo json_encode(['error' => 'Invalid JSON from the request']);
-        http_response_code(400); // Bad Request
+        echo json_encode(['error' => 'Invalid JSON from the request, Transaction Status: Not known, contact support']);
+        http_response_code(400);
         exit();
     }
 
-    // Check for Eurosat Pay request
-    if (isset($data['transactionID'], $data['amount'], $data['refno'], $data['narration'], $data['date_approved'])) {
+    // Log the decoded data
+    error_log('Decoded data: ' . print_r($data, true));
 
-        // Simulate transaction status (this would be replaced by actual logic)
-        $transactionStatus = 'success'; // or 'failure'
-
-        // Store the transaction status in the session
-        $_SESSION['transactionStatus'] = $transactionStatus;
+    if (isset($data['transactionID'])) {
         
-        // Process Eurosat Pay transaction data
-        $transactionID = htmlspecialchars($data['transactionID']);
-        $amount = htmlspecialchars($data['amount']);
-        $refno = htmlspecialchars($data['refno']);
-        $narration = htmlspecialchars($data['narration']);
-        $dateApproved = htmlspecialchars($data['date_approved']);
+        echo json_encode(['success' => 'Transaction response recieved successfully']);
 
-        // if session exists then send an email => only when the trasaction status wasn't found.
-        if (isset($_SESSION['name']) && isset($_SESSION['serviceName']) && isset($_SESSION['email'])) {
-            // Retrieve data from session
-            $name = $_SESSION['name'];
-            $serviceName = $_SESSION['serviceName'];
-            $email = $_SESSION['email'];
+        $transactionID = $data['transactionID'];
+        $amount = $data['amount'];
+        $refno = $data['refno'];
+        $narration = $data['narration'];
+        $dateApproved = $data['date_approved'];  
+        
+        // Extract session data
+        $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Unknown';
+        $email = isset($_SESSION['email']) ? $_SESSION['email'] : 'Unknown';
+        $message = isset($_SESSION['message']) ? $_SESSION['message'] : 'No message';
+        $mobileNo = isset($_SESSION['mobile-no']) ? $_SESSION['mobile-no'] : 'Unknown';
+        $serviceName = isset($_SESSION['service-name']) ? $_SESSION['service-name'] : 'Unknown';
 
-            $to = 'info@lyfexafrica.com';
-            $subject = 'New Successful Transaction from ' . $name;
-            $message = "Transaction was successful.\n\nDetails:\nService Name: $serviceName\nEmail: $email";
-            $headers = "From: no-reply@yourdomain.com\r\n";
-            $headers .= "Reply-To: no-reply@yourdomain.com\r\n";
-            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        // Prepare and send email
+        $to = 'info@lyfexafrica.com';
+        $subject = 'New Successful Transaction from ' . $name;
+        $emailMessage = "Transaction was successful.\n\nDetails:\nService Name: $serviceName\nEmail: $email\nAmount: $amount\nTransaction ID: $transactionID";
+        $headers = "From: no-reply@yourdomain.com\r\nReply-To: no-reply@yourdomain.com\r\nContent-Type: text/plain; charset=UTF-8\r\n";
 
-            mail($to, $subject, $message, $headers);
+        try {
 
-            unset($_SESSION['name']);
-            unset($_SESSION['serviceName']);
-            unset($_SESSION['email']);
+            $mailSent = mail($to, $subject, $message, $headers);
+            error_log('Transaction mail sent: ' .$to);
 
-            // session_destroy();
+            if (!$mailSent) {
+                throw new Exception('Failed to send email.');
+            }
+
             exit();
-        } 
-
-
-        // Respond to Eurosat Pay
-        echo json_encode(['transactionStatus' => $transactionStatus]);
-        http_response_code(200);
-        exit();
-    }
-
-
-    // Check for payment.js request
-
-    if (isset($data['name'], $data['serviceName'], $data['email'])) {
-
-        // Extract details from payment.js request
-        $name = htmlspecialchars($data['name']);
-        $serviceName = htmlspecialchars($data['serviceName']);
-        $email = htmlspecialchars($data['email']);
-
-        // Check if transaction status is set in the session
-        if (!isset($_SESSION['transactionStatus'])) {
-
-            echo json_encode(['error' => 'Transaction status not found, contact +256-755219625 to verify your transaction if you Entered pin!']);
-
-            $_SESSION['name'] = $name;
-            $_SESSION['serviceName'] = $serviceName;
-            $_SESSION['email'] = $email;
-            http_response_code(400); // Bad Request
+        } catch (Exception $e) {
+            error_log('Error sending email: ' . $e->getMessage());
             exit();
         }
-
-        // Get transaction status from the session
-        $transactionStatus = $_SESSION['transactionStatus'];
-
-        // Clear session data
-        unset($_SESSION['transactionStatus']);
-
-        // Prepare response and email
-        if ($transactionStatus === 'success') {
-            // Send email
-            $to = 'info@lyfexafrica.com';
-            $subject = 'New Successful Transaction from ' . $name;
-            $message = "Transaction was successful.\n\nDetails:\nService Name: $serviceName\nEmail: $email";
-            $headers = "From: no-reply@yourdomain.com\r\n";
-            $headers .= "Reply-To: no-reply@yourdomain.com\r\n";
-            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-            mail($to, $subject, $message, $headers);
-
-            // Respond to payment.js
-            echo json_encode(['success' => 'Transaction is successful']);
-            http_response_code(200);
-        } else {
-            echo json_encode(['error' => 'Transaction failed']);
-            http_response_code(400); // Bad Request
-        }
+        
+        session_unset();
+        session_destroy();
         exit();
-    }
+    } 
 
-    // Invalid request
-    echo json_encode(['error' => 'Invalid request']);
-    http_response_code(400); // Bad Request
+    echo json_encode(['error' => 'Transaction Status: No transaction data recieved']);
+    http_response_code(400);
+    exit();
+} 
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+    if (isset($_SESSION['transactionStatus'])) {
+        echo json_encode(['success' => 'Transaction status: Successfully.']);
+    } else {
+        echo json_encode(['error' => 'Transaction Status: Not known, contact support']);
+    }
+    http_response_code(200);
+    exit();
 }
-?>
+
+error_log('Request method not POST or GET: ' . $_SERVER['REQUEST_METHOD']);
+echo json_encode(['error' => 'Invalid request method, Transaction Status: Not known, contact support']);
+http_response_code(405);

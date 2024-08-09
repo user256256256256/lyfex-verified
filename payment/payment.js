@@ -44,15 +44,6 @@ $(document).ready(function() {
     $paymentBtn.click(function(event) {
         event.preventDefault(); 
 
-        // Basic validation
-        if (!$paymentDate.val().trim() || !$name.val().trim() || !$price.val().trim() || 
-            !$currency.val().trim() || !$serviceName.val().trim() || !$email.val().trim() || 
-            !$mobileNo.val().trim() || !$message.val().trim()) {
-            $statusMessage.removeClass('text-success').addClass('text-danger');
-            $statusMessage.text('Please fill all required fields.');
-            return;
-        }
-
         var formData = new URLSearchParams();
 
         formData.append('payment-date', $($paymentDate).val().trim());
@@ -73,18 +64,23 @@ $(document).ready(function() {
         })
         .then(response => response.json())
         .then(data => {
-            // Handle success response
+            // Handle success response         
             if (data.success) {
                 $statusMessage.removeClass('text-danger').addClass('text-success');
                 $statusMessage.text(data.success);
                 $paymentBtn.prop('disabled', true);
                 setTimeout(() => {
-                    $trasactionStatus.text("Trasction Pending...")
-                }, 10000);
+                    $trasactionStatus.text("Transaction Status: Data is ready for sending to Eurosat Pay")
+                }, 5000)
+                setTimeout(() => {
+                    $trasactionStatus.text("Transaction Status: Data is sent to Eurosat Pay")
+                }, 10000)
+                setTimeout(() => {
+                    $trasactionStatus.text("Transaction Status: Pending...")
+                }, 15000);
                 setTimeout(() => {
                     fetchPaymentCallback();
-                    $trasactionStatus.text("Transaction Loading...")
-                }, 20000); 
+                }, 35000); 
             } else {
                 $statusMessage.removeClass('text-success').addClass('text-danger');
                 $statusMessage.text(data.error);
@@ -93,39 +89,47 @@ $(document).ready(function() {
         .catch(error => {
             // Handle error response
             console.error('Error', error);
-            $statusMessage.text('An error occurred');
+            $statusMessage.addClass('text-danger');
+            $statusMessage.text('An error occurred, Transaction Status: Failed');
         });
     });
     
-    function fetchPaymentCallback() {
-        // Create a JavaScript object to send as JSON
-        const data = {
-            email: $($email).val().trim(),
-            name: $($name).val().trim(),
-            serviceName: $($serviceName).val().trim()
-        };
+    function fetchPaymentCallback(attempt = 1) {
+        const maxAttempts = 5; // Maximum number of retry attempts
+        const retryDelay = 5000; // Delay between attempts in milliseconds (5 seconds)
     
-        // Send the data as JSON
         fetch('payment/callback.php', {
-            method: 'POST', 
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data) // Convert the data object to a JSON string
+            }
         })
         .then(response => response.json())
         .then(data => {
-            // Handle success response
             if (data.success) {
+                // Successful response, update status and hide messages
                 $trasactionStatus.text(data.success);
             } else {
+                // Handle the error response
                 $trasactionStatus.text(data.error);
             }
         })
         .catch(error => {
-            // Handle error response
             console.error('Error', error);
-            $trasactionStatus.text('An error occurred');
+            $trasactionStatus.text('An error occurred while checking the transaction status.');
+        })
+        .finally(() => {
+            // Retry logic if status is still pending and attempts are not exhausted
+            if (attempt < maxAttempts) {
+                setTimeout(() => {
+                    $trasactionStatus.text('Retrying to fetch status...')
+                    fetchPaymentCallback(attempt + 1);
+                }, retryDelay);
+            } else {
+                // If max attempts reached, notify the user
+                $trasactionStatus.text('Transaction Status: Could not determine the status after multiple attempts.');
+            }
         });
     }
+    
 });
