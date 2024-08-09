@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         try {
 
-            $mailSent = mail($to, $subject, $message, $headers);
+            $mailSent = mail($to, $subject, $emailMessage, $headers);
             error_log('Transaction mail sent: ' .$to);
 
             if (!$mailSent) {
