@@ -119,10 +119,11 @@ $(document).ready(function() {
             $trasactionStatus.text('An error occurred while checking the transaction status.');
         })
         .finally(() => {
+            $trasactionStatus.text('Retrying to fetch status...')
+            
             // Retry logic if status is still pending and attempts are not exhausted
             if (attempt < maxAttempts) {
                 setTimeout(() => {
-                    $trasactionStatus.text('Retrying to fetch status...')
                     fetchPaymentCallback(attempt + 1);
                 }, retryDelay);
             } else {

@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+session_start(); 
+session_unset(); // Clear all session variables
+session_destroy(); // Destroy the session
+session_start(); // Restart the session
 
 header('Content-Type: application/json');
 
@@ -84,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
         // Success in initiating collection
-        echo json_encode(['success' => 'Enter pin on your phone to confirm transaction...']);
+        echo json_encode(['success' => 'Enter pin on your phone to confirm transaction.']);
         $_SESSION['name'] = $name;
         $_SESSION['email'] = $email;
         $_SESSION['serviceName'] = $serviceName;
