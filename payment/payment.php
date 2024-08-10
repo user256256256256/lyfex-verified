@@ -88,8 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
 
-        // Collect POST data into an associative array
-        $client_data = [
+        // Store the array in a session variable
+        $_SESSION['clientData'] =  [
             'name' => $name,
             'serviceName' => $serviceName,
             'email' => $email,
@@ -97,9 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
             'message' => $message
         ];
 
-        // Store the array in a session variable
-        $_SESSION['client_data'] = $client_data;
-        session_write_close(); // Ensure session data is saved
         error_log('Stored client data: ' . print_r($_SESSION, true));
 
         // Success in initiating collection
