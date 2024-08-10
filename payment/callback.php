@@ -1,12 +1,8 @@
 <?php
-session_start(); // Start session to store transaction data
+require_once 'config_session.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $_SESSION['transactionStatus'] = 'success';
-
-    // Log the transaction status set in the session
-    error_log('Session transactionStatus set to: ' . $_SESSION['transactionStatus']);
 
     // Handle POST requests
     $input = file_get_contents('php://input');
@@ -29,21 +25,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     error_log('Decoded data: ' . print_r($data, true));
 
     if (isset($data['transactionID'])) {
-    
+
+        $_SESSION['transactionStatus'] = 'success';
+        session_write_close(); // Ensure session data is saved
+
+        // Respond to Eurosat
         echo json_encode(['success' => 'Transaction response received successfully']);
-    
+
+        // Log the transaction status set in the session
+        error_log('Session transactionStatus set to: ' . $_SESSION['transactionStatus']);
+        
+        // Extract transaction data
         $transactionID = $data['transactionID'];
         $amount = $data['amount'];
         $refno = $data['refno'];
         $narration = $data['narration'];
         $dateApproved = $data['date_approved'];  
         
-        // Extract session data
-        $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Unknown';
-        $email = isset($_SESSION['email']) ? $_SESSION['email'] : 'Unknown';
-        $message = isset($_SESSION['message']) ? $_SESSION['message'] : 'No message';
-        $mobileNo = isset($_SESSION['mobile-no']) ? $_SESSION['mobile-no'] : 'Unknown';
-        $serviceName = isset($_SESSION['service-name']) ? $_SESSION['service-name'] : 'Unknown';
+        // Extract client data from session
+        $clientData = $_SESSION['client_data'];
+        
+        // Extract session data from client array
+        $name = isset($clientData['name']) ? $clientData['name'] : 'Unknown';
+        $serviceName = isset($clientData['serviceName']) ? $clientData['serviceName'] : 'Unknown';
+        $email = isset($clientData['email']) ? $clientData['email'] : 'Unknown';
+        $mobileNo = isset($clientData['mobileNo']) ? $clientData['mobileNo'] : 'Unknown';
+        $message = isset($clientData['message']) ? $clientData['message'] : 'Unknown';
     
         // Prepare and send email
         $to = 'info@lyfexafrica.com';
@@ -57,6 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $emailMessage .= "Narration: $narration\n";
         $emailMessage .= "Date Approved: $dateApproved\n";
         $emailMessage .= "Message: $message\n";
+        $emailMessage .= "Contact used: $mobileNo\n";
+
         
         $headers = "From: no-reply@yourdomain.com\r\nReply-To: no-reply@yourdomain.com\r\nContent-Type: text/plain; charset=UTF-8\r\n";
     
@@ -73,14 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             error_log('Error sending email: ' . $e->getMessage());
             exit();
         }
-        
-        session_unset();
-        session_destroy();
         exit();
     } 
     
 
-    echo json_encode(['error' => 'Transaction Status: No transaction data recieved']);
+    echo json_encode(['error' => 'Transaction Status: No transaction data received']);
     http_response_code(400);
     exit();
 } 
@@ -90,15 +96,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Log the current session transaction status
     error_log('GET request - Current session transactionStatus: ' . (isset($_SESSION['transactionStatus']) ? $_SESSION['transactionStatus'] : 'Not set'));
     
-    if (isset($_SESSION['transactionStatus'])) {
-        echo json_encode(['success' => 'Transaction status: Successfully.']);
-    } else {
-        echo json_encode(['error' => 'Transaction Status: Not known, contact support']);
-    }
+    $response = isset($_SESSION['transactionStatus'])
+    ? ['success' => 'Transaction status: Successfull.']
+    : ['error' => 'Transaction Status: Not known, contact support'];
+
+    echo json_encode($response);
+
     http_response_code(200);
     exit();
 }
 
 error_log('Request method not POST or GET: ' . $_SERVER['REQUEST_METHOD']);
-echo json_encode(['error' => 'Invalid request method, Transaction Status: Not known, contact support']);
-http_response_code(405);
+echo json_encode(['error' => 'Invalid request method']);
+http_response_code(400);
+exit();

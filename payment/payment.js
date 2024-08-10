@@ -66,14 +66,18 @@ $(document).ready(function() {
         .then(data => {
             // Handle success response         
             if (data.success) {
-                $statusMessage.removeClass('text-danger').addClass('text-success');
+                $statusMessage.removeClass('alert-danger').addClass('alert-success');
+                $statusMessage.addClass('show')
                 $statusMessage.text(data.success);
                 $paymentBtn.prop('disabled', true);
-                setTimeout(() => {
-                    $trasactionStatus.text("Transaction Status: Data is ready for sending to Eurosat Pay")
+
+                setTimeout(() => { 
+                    $trasactionStatus.addClass('show')
+                    $trasactionStatus.addClass('alert-info');
+                    $trasactionStatus.text("Transaction Status: Data is ready for sending to Eurosat Pay...")
                 }, 5000)
                 setTimeout(() => {
-                    $trasactionStatus.text("Transaction Status: Data is sent to Eurosat Pay")
+                    $trasactionStatus.text("Transaction Status: Data is sent to Eurosat Pay...")
                 }, 10000)
                 setTimeout(() => {
                     $trasactionStatus.text("Transaction Status: Pending...")
@@ -82,22 +86,23 @@ $(document).ready(function() {
                     fetchPaymentCallback();
                 }, 35000); 
             } else {
-                $statusMessage.removeClass('text-success').addClass('text-danger');
+                $statusMessage.addClass('show')
+                $statusMessage.removeClass('alert-success').addClass('alert-danger');
                 $statusMessage.text(data.error);
             }
         })
         .catch(error => {
             // Handle error response
             console.error('Error', error);
-            $statusMessage.addClass('text-danger');
-            $statusMessage.text('An error occurred, Transaction Status: Failed');
+            $statusMessage.addClass('show')
+            $statusMessage.removeClass('alert-success').addClass('alert-danger');
+            $statusMessage.text('An error occurred => Transaction Status: Failed');
         });
     });
     
-    function fetchPaymentCallback(attempt = 1) {
-        const maxAttempts = 5; // Maximum number of retry attempts
-        const retryDelay = 5000; // Delay between attempts in milliseconds (5 seconds)
-    
+    function fetchPaymentCallback() {
+        $statusMessage.addClass('d-none');
+
         fetch('payment/callback.php', {
             method: 'GET',
             headers: {
@@ -118,19 +123,5 @@ $(document).ready(function() {
             console.error('Error', error);
             $trasactionStatus.text('An error occurred while checking the transaction status.');
         })
-        .finally(() => {
-            $trasactionStatus.text('Retrying to fetch status...')
-            
-            // Retry logic if status is still pending and attempts are not exhausted
-            if (attempt < maxAttempts) {
-                setTimeout(() => {
-                    fetchPaymentCallback(attempt + 1);
-                }, retryDelay);
-            } else {
-                // If max attempts reached, notify the user
-                $trasactionStatus.text('Transaction Status: Could not determine the status after multiple attempts.');
-            }
-        });
     }
-    
 });

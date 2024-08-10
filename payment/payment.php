@@ -1,9 +1,10 @@
 <?php
-
 session_start(); 
 session_unset(); // Clear all session variables
 session_destroy(); // Destroy the session
-session_start(); // Restart the session
+
+require_once 'config_session.php';
+
 
 header('Content-Type: application/json');
 
@@ -19,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     $email = $_POST['email'];
     $mobileNo = $_POST['mobile-no'];
     $message = $_POST['message'];
+
 
     // Validate form fields
     if (empty($paymentDate) || empty($name) || empty($currency) || empty($serviceName) || empty($email) || empty($mobileNo) || empty($message)) {
@@ -37,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     }
 
     $wordCount = str_word_count($message);
-
     if ($wordCount > 100) {
         echo json_encode(['error' => 'Error: Message should contain less than 100 words!']);
         exit();
@@ -77,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         echo json_encode(['error' => 'cURL Error: ' . curl_error($initiateCurl)]);
         curl_close($initiateCurl);
         exit();
-    } 
+    }
     
     curl_close($initiateCurl);
 
@@ -86,16 +87,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
+
+        // Collect POST data into an associative array
+        $client_data = [
+            'name' => $name,
+            'serviceName' => $serviceName,
+            'email' => $email,
+            'mobileNo' => $mobileNo,
+            'message' => $message
+        ];
+
+        // Store the array in a session variable
+        $_SESSION['client_data'] = $client_data;
+        session_write_close(); // Ensure session data is saved
+        error_log('Stored client data: ' . print_r($_SESSION, true));
+
         // Success in initiating collection
         echo json_encode(['success' => 'Enter pin on your phone to confirm transaction.']);
-        $_SESSION['name'] = $name;
-        $_SESSION['email'] = $email;
-        $_SESSION['serviceName'] = $serviceName;
-        $_SESSION['message'] = $message;
-        $_SESSION['mobile-no'] = $mobileNo;
 
-        error_log('Stored client data: ' .print_r($_SESSION, true));
-    
         exit();
     } else {
         // Extract error message from the response
@@ -108,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         http_response_code(500); // Internal Server Error
     }
 
-}  else {
+} else {
     echo json_encode(['error' => 'Invalid request, Transaction Status: Failed!']);
 }
 
@@ -126,6 +135,5 @@ function isValidMobileNumber($mobileNo) {
 
 // Function to generate a numeric payrefno
 function generateNumericPayrefno() {
-    // You can use a more complex logic if needed
     return strval(rand(100000, 999999));
 }
