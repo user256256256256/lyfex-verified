@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Log the decoded data
     error_log('Decoded data: ' . print_r($data, true));
 
-    if (isset($data['transactionID'])) {        
+    if (isset($data['transactionID']) || stripos($data["narration"], 'cancelled') !== false) {        
 
         // Respond to Eurosat
         echo json_encode(['success' => 'Transaction response received successfully']);
