@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+require_once 'config_cookie.php'; // Cookie configuration
 
 header('Content-Type: application/json');
 
@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     }
 
     $wordCount = str_word_count($message);
-
     if ($wordCount > 100) {
         echo json_encode(['error' => 'Error: Message should contain less than 100 words!']);
         exit();
@@ -74,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         echo json_encode(['error' => 'cURL Error: ' . curl_error($initiateCurl)]);
         curl_close($initiateCurl);
         exit();
-    } 
+    }
     
     curl_close($initiateCurl);
 
@@ -83,16 +82,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
-        // Success in initiating collection
-        echo json_encode(['success' => 'Enter pin on your phone to confirm transaction...']);
-        $_SESSION['name'] = $name;
-        $_SESSION['email'] = $email;
-        $_SESSION['serviceName'] = $serviceName;
-        $_SESSION['message'] = $message;
-        $_SESSION['mobile-no'] = $mobileNo;
 
-        error_log('Stored client data: ' .print_r($_SESSION, true));
-    
+        // Prepare client data for the cookie
+        $clientData = json_encode([
+            'name' => $name,
+            'serviceName' => $serviceName,
+            'email' => $email,
+            'mobileNo' => $mobileNo,
+            'message' => $message
+        ]);
+
+        // Set the cookie with the client data
+        setcookie(
+            'clientData',
+            $clientData,
+            [
+                'expires' => time() + $cookie_lifetime,
+                'path' => $cookie_path,
+                'domain' => $cookie_domain,
+                'secure' => $cookie_secure,
+                'httponly' => $cookie_httponly,
+                'samesite' => 'Strict' // or 'Lax' if 'Strict' causes issues
+            ]
+        );
+
+        // Log stored client data for debugging
+        error_log('Stored client data in cookie: ' . $clientData);
+
+        // Success in initiating collection
+        echo json_encode(['success' => 'Enter pin on your phone to confirm transaction.']);
+
         exit();
     } else {
         // Extract error message from the response
@@ -105,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         http_response_code(500); // Internal Server Error
     }
 
-}  else {
+} else {
     echo json_encode(['error' => 'Invalid request, Transaction Status: Failed!']);
 }
 
@@ -123,6 +142,5 @@ function isValidMobileNumber($mobileNo) {
 
 // Function to generate a numeric payrefno
 function generateNumericPayrefno() {
-    // You can use a more complex logic if needed
     return strval(rand(100000, 999999));
 }
