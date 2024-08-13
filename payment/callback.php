@@ -1,18 +1,34 @@
 <?php
-require_once 'config_session.php';
 
+require_once 'config_cookie.php'; // Cookie configuration
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $_SESSION['transactionStatus'] = 'success';
+    // Set cookie for transaction status
+    setcookie(
+        'transactionStatus',
+        'success',
+        [
+            'expires' => time() + $cookie_lifetime,
+            'path' => $cookie_path,
+            'domain' => $cookie_domain,
+            'secure' => $cookie_secure,
+            'httponly' => $cookie_httponly,
+            'samesite' => 'Strict' // or 'Lax' if 'Strict' causes issues
+        ]
+    );
 
-    // Log the transaction status set in the session
-    error_log('Session transactionStatus set to: ' . $_SESSION['transactionStatus']);
+    // Log the transaction status set in the cookie
+    error_log('Cookie transactionStatus set to: ' . $_COOKIE['transactionStatus']);
 
-    // Extract client data from session
-    $clientData = $_SESSION['clientData'];
+    // Extract client data from cookie
+    if (isset($_COOKIE['clientData'])) {
+        $clientData = json_decode($_COOKIE['clientData'], true);
+    } else {
+        $clientData = [];
+    }
     
-    // Extract session data from client array
+    // Extract cookie data
     $name = isset($clientData['name']) ? $clientData['name'] : 'Unknown';
     $serviceName = isset($clientData['serviceName']) ? $clientData['serviceName'] : 'Unknown';
     $email = isset($clientData['email']) ? $clientData['email'] : 'Unknown';
@@ -36,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // // Log the decoded data
+    // Log the decoded data
     error_log('Decoded data: ' . print_r($data, true));
 
     if (isset($data['transactionID'])) {        
@@ -65,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $emailMessage .= "Message: $message\n";
         $emailMessage .= "Contact used: $mobileNo\n";
 
-        $headers = "From: nutrifin@lyfexafrica.com\r\nReply-To: payments@lyfexafrica.com\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+        $headers = "From: payment@lyfexafrica.com\r\nReply-To: payments@lyfexafrica.com\r\nContent-Type: text/plain; charset=UTF-8\r\n";
     
         try {
             $mailSent = mail($to, $subject, $emailMessage, $headers);
@@ -89,15 +105,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-    // Log the current session transaction status
-    error_log('GET request - Current session transactionStatus: ' . (isset($_SESSION['transactionStatus']) ? $_SESSION['transactionStatus'] : 'Not set'));
+    // Log the current cookie transaction status
+    error_log('GET request - Current cookie transactionStatus: ' . (isset($_COOKIE['transactionStatus']) ? $_COOKIE['transactionStatus'] : 'Not set'));
     
-    $response = isset($_SESSION['transactionStatus'])
-    ? ['success' => 'Transaction status: Successfull.']
-    : ['error' => 'Transaction Status: Complete, contact Admin +256-779-185562'];
+    $response = isset($_COOKIE['transactionStatus'])
+    ? ['success' => 'Transaction status: Successful.']
+    : ['error' => 'Transaction Status: Not known'];
+    // contact Admin +256-779-185562
 
     echo json_encode($response);
-
     http_response_code(200);
     exit();
 }

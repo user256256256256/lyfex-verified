@@ -75,16 +75,16 @@ $(document).ready(function() {
                     $trasactionStatus.addClass('show')
                     $trasactionStatus.addClass('alert-info');
                     $trasactionStatus.text("Transaction Status: Data is ready for sending to Eurosat Pay...")
-                }, 5000)
+                }, 1000)
                 setTimeout(() => {
                     $trasactionStatus.text("Transaction Status: Data is sent to Eurosat Pay...")
-                }, 10000)
+                }, 2000)
                 setTimeout(() => {
                     $trasactionStatus.text("Transaction Status: Pending...")
-                }, 15000);
+                }, 3000);
                 setTimeout(() => {
                     fetchPaymentCallback();
-                }, 35000); 
+                }, 4000); 
             } else {
                 $statusMessage.addClass('show')
                 $statusMessage.removeClass('alert-success').addClass('alert-danger');
@@ -100,9 +100,12 @@ $(document).ready(function() {
         });
     });
     
-    function fetchPaymentCallback() {
+    function fetchPaymentCallback(retryCount = 0) {
+        const maxRetries = 5; // Define the maximum number of retries
+        const retryDelay = 5000; // 5 seconds delay
+    
         $statusMessage.addClass('d-none');
-
+    
         fetch('payment/callback.php', {
             method: 'GET',
             headers: {
@@ -115,13 +118,27 @@ $(document).ready(function() {
                 // Successful response, update status and hide messages
                 $trasactionStatus.text(data.success);
             } else {
-                // Handle the error response
-                $trasactionStatus.text(data.error);
+                // If there is an error, retry fetching the status
+                $trasactionStatus.text('Retrying to fetch transaction status...');
+                if (retryCount < maxRetries) {
+                    setTimeout(() => {
+                        fetchPaymentCallback(retryCount + 1); // Recursive call with incremented retry count
+                    }, retryDelay);
+                } else {
+                    $trasactionStatus.text('Failed to retrieve transaction status after multiple attempts.');
+                }
             }
         })
         .catch(error => {
             console.error('Error', error);
-            $trasactionStatus.text('An error occurred while checking the transaction status.');
-        })
-    }
+            $trasactionStatus.text('Retrying to fetch status...');
+            if (retryCount < maxRetries) {
+                setTimeout(() => {
+                    fetchPaymentCallback(retryCount + 1); // Recursive call with incremented retry count
+                }, retryDelay);
+            } else {
+                $trasactionStatus.text('An error occurred while checking the transaction status after multiple attempts.');
+            }
+        });
+    }    
 });

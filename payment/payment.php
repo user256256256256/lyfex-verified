@@ -1,10 +1,6 @@
 <?php
-session_start(); 
-session_unset(); // Clear all session variables
-session_destroy(); // Destroy the session
 
-require_once 'config_session.php';
-
+require_once 'config_cookie.php'; // Cookie configuration
 
 header('Content-Type: application/json');
 
@@ -20,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     $email = $_POST['email'];
     $mobileNo = $_POST['mobile-no'];
     $message = $_POST['message'];
-
 
     // Validate form fields
     if (empty($paymentDate) || empty($name) || empty($currency) || empty($serviceName) || empty($email) || empty($mobileNo) || empty($message)) {
@@ -88,16 +83,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
 
-        // Store the array in a session variable
-        $_SESSION['clientData'] =  [
+        // Prepare client data for the cookie
+        $clientData = json_encode([
             'name' => $name,
             'serviceName' => $serviceName,
             'email' => $email,
             'mobileNo' => $mobileNo,
             'message' => $message
-        ];
+        ]);
 
-        error_log('Stored client data: ' . print_r($_SESSION, true));
+        // Set the cookie with the client data
+        setcookie(
+            'clientData',
+            $clientData,
+            [
+                'expires' => time() + $cookie_lifetime,
+                'path' => $cookie_path,
+                'domain' => $cookie_domain,
+                'secure' => $cookie_secure,
+                'httponly' => $cookie_httponly,
+                'samesite' => 'Strict' // or 'Lax' if 'Strict' causes issues
+            ]
+        );
+
+        // Log stored client data for debugging
+        error_log('Stored client data in cookie: ' . $clientData);
 
         // Success in initiating collection
         echo json_encode(['success' => 'Enter pin on your phone to confirm transaction.']);
