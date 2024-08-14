@@ -1,75 +1,52 @@
-//  Js validation
+$(document).ready(function() {
+    $('#sendMessageButton').on('click', function(e) {
+        e.preventDefault();
 
-const clientName = document.getElementById('name')
-const clientEmail = document.getElementById('email') 
-const clientMobileContact = document.getElementById('subject') 
-const clientAddress = document.getElementById('address')
-const clientWhContact = document.getElementById('wh-contact')
-const clientAge = document.getElementById('age')
-const clientScheduledtime = document.getElementById('schedule')
-const clientLeadLocation = document.getElementById('lead-location')
-const clientMessage = document.getElementById('message')
-const privacyPolicy = document.getElementById('privacy-policies')
+        var $statusMessage = $('#status-message');
 
-const sendMessageButton = document.getElementById('sendMessageButton') 
+        // Validate Message Word Count
 
-sendMessageButton.addEventListener('click', (e)=> {
-    e.preventDefault()
-    if(!privacyPolicy.checked) {
-        privacyPolicy.nextElementSibling.textContent = 'Please verify privacy policies';
-        return;
-    }
-    
-    const words = clientMessage.value.trim().split(/\s+/)
-    const wordCount = words.length;
-    if (wordCount > 255) {
-        clientMessage.nextElementSibling.textContent = 'Use less than 255 words';
-        return;
-    }
+        // Prepare Form Data
+        var params = new URLSearchParams({
+            clientName: $('#name').val().trim(),
+            clientEmail: $('#email').val().trim(),
+            clientMobileContact: $('#subject').val().trim(),
+            clientAddress: $('#address').val().trim(),
+            clientWhContact: $('#wh-contact').val().trim(),
+            clientAge: $('#age').val().trim(),
+            clientScheduledTime: $('#schedule').val(),
+            clientLeadLocation: $('#lead-location').val(),
+            clientMessage: $('#message').val().trim(),
+            privacyPolicy: $('#privacy-policies').is(':checked') ? 'true' : 'false'
+        });
 
-    const statusMessage = document.getElementById('status-message')
+        // Send Data Using Fetch
+        fetch('appointment/appointment.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: params.toString()
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                $statusMessage.addClass('show')
+                $statusMessage.removeClass('alert-danger').addClass('alert-success').text(data.success);
 
-    const params = new URLSearchParams()
-    params.append('clientName', clientName.value.trim());
-    params.append('clientEmail', clientEmail.value.trim());
-    params.append('clientMobileContact', clientMobileContact.value.trim());
-    params.append('clientAddress', clientAddress.value.trim());
-    params.append('clientWhContact', clientWhContact.value.trim());
-    params.append('clientAge', clientAge.value.trim());
-    params.append('clientScheduledTime', clientScheduledtime.value);
-    params.append('clientLeadLocation', clientLeadLocation.value);
-    params.append('clientMessage', clientMessage.value);
-    params.append('privacyPolicy', privacyPolicy.checked ? 'true' : 'false');
-
-    fetch('appointment/appointment.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params.toString()
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            statusMessage.classList.remove('text-danger')
-            statusMessage.classList.add('text-success')
-            statusMessage.textContent = data.success
-
-            // refresh page
-            setTimeout(() => {
-                window.location.reload();
-            }, 5000);
-        } else {
-            statusMessage.classList.remove('text-success')
-            statusMessage.classList.add('text-danger')
-            statusMessage.textContent = data.error
-        }
-    })
-    .catch(error => {
-        console.error('Error', error)
-        statusMessage.textContent = error;
-    })
-
-})
-
-
+                // Refresh page
+                setTimeout(function() {
+                    window.location.reload();
+                }, 5000);
+            } else {
+                $statusMessage.addClass('show')
+                $statusMessage.removeClass('alert-success').addClass('alert-danger').text(data.error);
+            }
+        })
+        .catch(error => {
+            $statusMessage.addClass('show')
+            $statusMessage.removeClass('alert-success').addClass('alert-danger').text('An error occurred. Contact support')
+            console.error('Error:', error);
+        });
+    });
+});

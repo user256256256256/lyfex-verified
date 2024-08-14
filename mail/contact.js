@@ -1,45 +1,45 @@
-// contact Js validation
+$(document).ready(function() {
+    $('#sendMessageButton').on('click', function(e) {
+        e.preventDefault();
 
-const senderName = document.getElementById('name')
-const senderEmail = document.getElementById('email') 
-const senderSubject = document.getElementById('subject') 
-const senderMessage = document.getElementById('message')
-const sendMessageButton = document.getElementById('sendMessageButton') 
+        var senderName = $('#name').val().trim();
+        var senderEmail = $('#email').val().trim();
+        var senderSubject = $('#subject').val().trim();
+        var senderMessage = $('#message').val().trim();
+        var statusMessage = $('#status-message');
 
-sendMessageButton.addEventListener('click', (e)=> {
-    e.preventDefault()
+        var params = new URLSearchParams();
+        params.append('senderName', senderName);
+        params.append('senderEmail', senderEmail);
+        params.append('senderSubject', senderSubject);
+        params.append('senderMessage', senderMessage);
 
-    const statusMessage = document.getElementById('status-message')
+        fetch('mail/contact.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: params.toString()
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                statusMessage.addClass('show')
+                statusMessage.removeClass('alert-danger').addClass('alert-success').text(data.success);
 
-    const params = new URLSearchParams()
-    params.append('senderName', senderName.value.trim())
-    params.append('senderEmail', senderEmail.value.trim())
-    params.append('senderSubject', senderSubject.value.trim())
-    params.append('senderMessage', senderMessage.value.trim())
-
-
-    
-    fetch('mail/contact.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params.toString()
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            statusMessage.classList.add('text-success')
-            statusMessage.textContent = data.success
-        } else {
-            statusMessage.classList.add('text-danger')
-            statusMessage.textContent = data.error
-        }
-    })
-    .catch(error => {
-        console.error('Error', error)
-    })
-
-})
-
-
+                // Refresh page
+                setTimeout(function() {
+                    window.location.reload();
+                }, 5000);
+            } else {
+                statusMessage.addClass('show')
+                statusMessage.removeClass('alert-success').addClass('alert-danger').text(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            statusMessage.addClass('show')
+            statusMessage.removeClass('alert-success').addClass('alert-danger').text("An error occurred. Contact support");
+        });
+    });
+});

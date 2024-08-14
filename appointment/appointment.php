@@ -48,6 +48,12 @@ if (!empty($_POST)) {
         }
     }
 
+    $wordCount = str_word_count($clientMessage);
+    if ($wordCount > 255) {
+        echo json_encode(['error' => 'Use less than 255 words!']);
+        exit();
+    }
+
     $to = 'info@lyfexafrica.com';
     $subject = "New Appointment From: $clientName";
     $message = "
@@ -72,17 +78,6 @@ if (!empty($_POST)) {
             throw new Exception('Failed to send email.');
         }
 
-        // // Send automatic response to the client
-        // $clientResponseSubject = 'Thank you for your inquiry';
-        // $clientResponseMessage = "Dear $clientName,\r\n\r\nThank you for contacting us. We have received your message and will get back to you as soon as possible.\r\n\r\nBest regards,\r\nLyfex Africa Team";
-
-        // $clientResponseHeaders = "From: info@lyfexafrica.com\r\n";
-        // $clientResponseSent = mail($clientEmail, $clientResponseSubject, $clientResponseMessage, $clientResponseHeaders);
-
-        // if (!$clientResponseSent) {
-        //     throw new Exception('Failed to send automatic response email.');
-        // }
-
         echo json_encode(['success' => 'Mail received successfully!']);
         exit();
     } catch (Exception $e) {
@@ -90,6 +85,7 @@ if (!empty($_POST)) {
         error_log('Error sending email: ' . $e->getMessage());
         exit();
     }
+
 } else {
     echo json_encode(['error' => 'No POST data received.']);
     exit();

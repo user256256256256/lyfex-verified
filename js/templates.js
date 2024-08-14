@@ -323,27 +323,21 @@ class AppointmentSection extends HTMLElement {
                                 <div class="row g-3" appoitment-fields>
                                     <div class="col-6 col-sm-6 control-group">
                                         <input type="text" class="form-control border-0" id="name"  placeholder="Name"  style="height: 55px;">
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm- control-group6">
                                         <input type="email" class="form-control border-0" id="email" placeholder="Email"  style="height: 55px;">
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
                                         <input type="text" class="form-control border-0" id="subject" placeholder="Mobile Phone No."   style="height: 55px;">
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
                                         <input type="text" class="form-control border-0" id="address" placeholder="Address" style="height: 55px;">
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
                                         <input type="text" class="form-control border-0" id="wh-contact" placeholder="Whatsapp No."  style="height: 55px;">
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
                                         <input type="text" class="form-control border-0" id="age" placeholder="Age"  style="height: 55px;">
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
                                         <label for="Schedule">Choose Prefered Schedule:</label>
@@ -354,7 +348,6 @@ class AppointmentSection extends HTMLElement {
                                             <option value="Tuesday, 9:00am-11am">Tuesday, 9:00am-11:00am</option>
                                             <option value="Tuesday, 2:00pm-4:00pm">Tuesday, 2:00pm-4:00pm</option>                                               
                                         </select>
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
                                         <label for="leads">Where did you hear about us:</label>
@@ -366,21 +359,18 @@ class AppointmentSection extends HTMLElement {
                                             <option value="friend">Friend</option>                                          
                                             <option value="website">Our website</option>                                          
                                         </select>
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-12 control-group">
                                         <textarea class="form-control border-0" rows="5" id="message" placeholder="Short description of your health condition!" ></textarea>
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div>
                                         <label class="text-primary" for="privacy-policies"><a href="privacy.html">Accept privacy policies </a></label>
                                         <input title="privacy-policies" type="checkbox" name="" id="privacy-policies">
-                                        <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit" id="sendMessageButton" >Book Appointment</button>
                                     </div>
-                                <p id="status-message" class="text-center py-3 px-5"></p>
+                                    <p id="status-message" class="text-center py-3 px-5 alert fade rounded" ></p>
                                 </div>
                             </form>
                         </div>

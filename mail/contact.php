@@ -21,6 +21,19 @@ if (!empty($_POST)) {
         exit();
     }
 
+    $wordCountSubject = str_word_count($senderSubject);
+    if ($wordCountSubject > 10) {
+        echo json_encode(['error' => 'Use less than 10 words for the subject!']);
+        exit();
+    }
+
+    $wordCountMessage = str_word_count($senderMessage);
+    if ($wordCountMessage > 255) {
+        echo json_encode(['error' => 'Use less than 255 words for the message!']);
+        exit();
+    }
+
+
     $to = 'info@lyfexafrica.com';
     $subject = 'New Message: ' . $senderSubject;
     $message = 'Name: ' . $senderName . "\r\n\r\n";
