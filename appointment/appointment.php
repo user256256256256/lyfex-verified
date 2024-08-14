@@ -80,6 +80,7 @@ if (!empty($_POST)) {
 
         echo json_encode(['success' => 'Mail received successfully!']);
         exit();
+        
     } catch (Exception $e) {
         echo json_encode(['error' => 'An error occurred: ' . $e->getMessage()]);
         error_log('Error sending email: ' . $e->getMessage());

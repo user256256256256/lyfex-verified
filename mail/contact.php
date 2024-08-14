@@ -40,16 +40,23 @@ if (!empty($_POST)) {
     $message .= 'Email: ' . $senderEmail . "\r\n\r\n";
     $message .= 'Message: ' . "\r\n" . $senderMessage;
 
-    $headers = 'From: ' . $senderName . ' <' . $senderEmail . '>' . "\r\n" .
-    'Reply-To: ' . $senderEmail . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+    $headers = "From: $clientEmail\r\n";
 
-    $mailSent = mail($to, $subject, $message, $headers);
+    try {
 
-    if ($mailSent) {
-        echo json_encode(['success' => 'Mail Sent Successfully !']);
-    } else {
-         echo json_encode(['error' => 'Failed to connect to server !']);
+        $mailSent = mail($to, $subject, $message, $headers);
+
+        if (!$mailSent) {
+            throw new Exception('Failed to send email.');
+        }
+
+        echo json_encode(['success' => 'Mail received successfully!']);
+        exit();
+
+    } catch (Exception $e) {
+        echo json_encode(['error' => 'An error occurred: ' . $e->getMessage()]);
+        error_log('Error sending email: ' . $e->getMessage());
+        exit();
     }
 
     die();
