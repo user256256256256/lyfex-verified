@@ -328,7 +328,7 @@ class AppointmentSection extends HTMLElement {
                                         <input type="email" class="form-control border-0" id="email" placeholder="Email"  style="height: 55px;">
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Mobile Phone No."   style="height: 55px;">
+                                        <input type="text" class="form-control border-0" id="subject" placeholder="Mobile Phone No."   style="height: 55px;">                                 
                                     </div>
                                     <div class="col-6 col-sm-6 control-group">
                                         <input type="text" class="form-control border-0" id="address" placeholder="Address" style="height: 55px;">
