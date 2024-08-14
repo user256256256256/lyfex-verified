@@ -36,11 +36,13 @@ if (!empty($_POST)) {
 
     $to = 'info@lyfexafrica.com';
     $subject = 'New Message: ' . $senderSubject;
-    $message = 'Name: ' . $senderName . "\r\n\r\n";
-    $message .= 'Email: ' . $senderEmail . "\r\n\r\n";
-    $message .= 'Message: ' . "\r\n" . $senderMessage;
+    $message = "
+    Client Name: $senderName
+    Client Email: $senderEmail
+    Client Subject: $senderSubject
+    Client Message: $senderMessage";
 
-    $headers = "From: $clientEmail\r\n";
+    $headers = "From: $senderEmail\r\n";
 
     try {
 
