@@ -35,7 +35,7 @@ if (!empty($_POST)) {
 
 
     $to = 'info@lyfexafrica.com';
-    $subject = 'New Message: ' . $senderSubject;
+    $subject = 'New Message from: ' . $senderName;
     $message = "
     Client Name: $senderName
     Client Email: $senderEmail
