@@ -96,7 +96,7 @@ $(document).ready(function() {
             console.error('Error', error);
             $statusMessage.addClass('show')
             $statusMessage.removeClass('alert-success').addClass('alert-danger');
-            $statusMessage.text('An error occurred => Transaction Status: Failed');
+            $statusMessage.text('An error occurred, check your internet connection. Transaction Status: Failed');
         });
     });
     
