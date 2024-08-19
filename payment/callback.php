@@ -2,6 +2,12 @@
 
 require_once 'config_cookie.php'; // Cookie configuration
 
+// Function to safely get cookie values with a default fallback
+function getCookieValue($key, $default = 'Unknown') {
+    return isset($_COOKIE[$key]) ? $_COOKIE[$key] : $default;
+}
+
+// Handle POST requests
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Set cookie for transaction status
@@ -19,21 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     // Log the transaction status set in the cookie
-    error_log('Cookie transactionStatus set to: ' . $_COOKIE['transactionStatus']);
+    error_log('Cookie transactionStatus set to: ' . getCookieValue('transactionStatus'));
 
     // Extract client data from cookie
-    if (isset($_COOKIE['clientData'])) {
-        $clientData = json_decode($_COOKIE['clientData'], true);
-    } else {
-        $clientData = [];
-    }
-    
+    $clientData = isset($_COOKIE['clientData']) ? json_decode(base64_decode($_COOKIE['clientData']), true) : [];
+
     // Extract cookie data
-    $name = isset($clientData['name']) ? $clientData['name'] : 'Unknown';
-    $serviceName = isset($clientData['serviceName']) ? $clientData['serviceName'] : 'Unknown';
-    $email = isset($clientData['email']) ? $clientData['email'] : 'Unknown';
-    $mobileNo = isset($clientData['mobileNo']) ? $clientData['mobileNo'] : 'Unknown';
-    $message = isset($clientData['message']) ? $clientData['message'] : 'Unknown';
+    $name = getCookieValue('name', 'Unknown');
+    $serviceName = getCookieValue('serviceName', 'Unknown');
+    $email = getCookieValue('email', 'Unknown');
+    $mobileNo = getCookieValue('mobileNo', 'Unknown');
+    $message = getCookieValue('message', 'Unknown');
 
     // Handle POST requests
     $input = file_get_contents('php://input');
@@ -61,11 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['success' => 'Transaction response received successfully']);
         
         // Extract transaction data
-        $transactionID = $data['transactionID'];
-        $amount = $data['amount'];
-        $refno = $data['refno'];
-        $narration = $data['narration'];
-        $dateApproved = $data['date_approved'];  
+        $transactionID = isset($data['transactionID']) ? $data['transactionID'] : 'Unknown';
+        $amount = isset($data['amount']) ? $data['amount'] : 'Unknown';
+        $refno = isset($data['refno']) ? $data['refno'] : 'Unknown';
+        $narration = isset($data['narration']) ? $data['narration'] : 'Unknown';
+        $dateApproved = isset($data['date_approved']) ? $data['date_approved'] : 'Unknown';
     
         // Prepare and send email
         $to = 'info@lyfexafrica.com';
@@ -96,17 +98,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         exit();
     } 
-    
 
     echo json_encode(['error' => 'Transaction Status: No transaction data received']);
     http_response_code(400);
     exit();
 } 
 
+// Handle GET requests
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     // Log the current cookie transaction status
-    error_log('GET request - Current cookie transactionStatus: ' . (isset($_COOKIE['transactionStatus']) ? $_COOKIE['transactionStatus'] : 'Not set'));
+    error_log('GET request - Current cookie transactionStatus: ' . getCookieValue('transactionStatus', 'Not set'));
     
     $response = isset($_COOKIE['transactionStatus'])
     ? ['success' => 'Transaction status: Successful.']
@@ -118,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     exit();
 }
 
+// Handle other request methods
 error_log('Request method not POST or GET: ' . $_SERVER['REQUEST_METHOD']);
 echo json_encode(['error' => 'Invalid request method']);
 http_response_code(400);
