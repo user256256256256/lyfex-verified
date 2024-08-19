@@ -1,5 +1,4 @@
 <?php
-
 // Set cookie parameters
 $cookie_lifetime = 40; // Lifetime of the cookie in seconds
 $cookie_domain = "lyfexafrica.com";

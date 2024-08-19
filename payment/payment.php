@@ -8,14 +8,14 @@ header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 
     // Handle the form submission
-    $paymentDate = $_POST['payment-date'];
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $currency = $_POST['currency'];
-    $serviceName = $_POST['service-name'];
-    $email = $_POST['email'];
-    $mobileNo = $_POST['mobile-no'];
-    $message = $_POST['message'];
+    $paymentDate = trim($_POST['payment-date']);
+    $name = trim($_POST['name']);
+    $price = trim($_POST['price']);
+    $currency = trim($_POST['currency']);
+    $serviceName = trim($_POST['service-name']);
+    $email = trim($_POST['email']);
+    $mobileNo = trim($_POST['mobile-no']);
+    $message = trim($_POST['message']);
 
     // Validate form fields
     if (empty($paymentDate) || empty($name) || empty($currency) || empty($serviceName) || empty($email) || empty($mobileNo) || empty($message)) {
@@ -84,30 +84,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     if (strpos($initiateResponse, '"code":"200"') !== false) {
 
         // Prepare client data for the cookie
-        $clientData = json_encode([
-            'name' => $name,
-            'serviceName' => $serviceName,
-            'email' => $email,
-            'mobileNo' => $mobileNo,
-            'message' => $message
-        ]);
+        $clientData = [
+            'name' => htmlspecialchars($name, ENT_QUOTES, 'UTF-8'),
+            'serviceName' => htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8'),
+            'email' => htmlspecialchars($email, ENT_QUOTES, 'UTF-8'),
+            'mobileNo' => htmlspecialchars($mobileNo, ENT_QUOTES, 'UTF-8'),
+            'message' => htmlspecialchars($message, ENT_QUOTES, 'UTF-8')
+        ];
+
+        // Encode client data for cookie storage
+        $encodedClientData = base64_encode(json_encode($clientData));
 
         // Set the cookie with the client data
         setcookie(
             'clientData',
-            $clientData,
+            $encodedClientData,
             [
                 'expires' => time() + $cookie_lifetime,
                 'path' => $cookie_path,
                 'domain' => $cookie_domain,
                 'secure' => $cookie_secure,
                 'httponly' => $cookie_httponly,
-                'samesite' => 'Lax' // or 'Lax' if 'Strict' causes issues
+                'samesite' => 'Strict' // or 'Lax' if 'Strict' causes issues
             ]
         );
 
-        // Log stored client data for debugging
-        error_log('Stored client data in cookie: ' . $clientData);
+        // Log stored client data for debugging (base64 encoded)
+        error_log('Stored client data in cookie: ' . $encodedClientData);
 
         // Success in initiating collection
         echo json_encode(['success' => 'Enter pin on your phone to confirm transaction.']);
