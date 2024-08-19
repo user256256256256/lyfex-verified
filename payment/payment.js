@@ -84,7 +84,7 @@ $(document).ready(function() {
                 }, 3000);
                 setTimeout(() => {
                     fetchPaymentCallback();
-                }, 4000); 
+                }, 10000); 
             } else {
                 $statusMessage.addClass('show')
                 $statusMessage.removeClass('alert-success').addClass('alert-danger');
