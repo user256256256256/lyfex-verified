@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
                 'domain' => $cookie_domain,
                 'secure' => $cookie_secure,
                 'httponly' => $cookie_httponly,
-                'samesite' => 'Strict' // or 'Lax' if 'Strict' causes issues
+                'samesite' => 'Lax' // or 'Lax' if 'Strict' causes issues
             ]
         );
 
