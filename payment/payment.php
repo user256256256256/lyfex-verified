@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config_cookie.php'; // Cookie configuration
+require_once '../DB/dbo.php'; // Database configuration
 
 header('Content-Type: application/json');
 
@@ -83,37 +83,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Check for success code in the raw response
     if (strpos($initiateResponse, '"code":"200"') !== false) {
 
-        // Prepare client data for the cookie
-        $clientData = [
-            'name' => htmlspecialchars($name, ENT_QUOTES, 'UTF-8'),
-            'serviceName' => htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8'),
-            'email' => htmlspecialchars($email, ENT_QUOTES, 'UTF-8'),
-            'mobileNo' => htmlspecialchars($mobileNo, ENT_QUOTES, 'UTF-8'),
-            'message' => htmlspecialchars($message, ENT_QUOTES, 'UTF-8')
-        ];
+        // Prepare data for database insertion
+        $sql = "INSERT INTO payments_intiated (paymentDate, name, price, currency, serviceName, email, mobileNo, message) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        // Encode client data for cookie storage
-        $encodedClientData = base64_encode(json_encode($clientData));
+        // Prepare and execute the SQL statement
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param('sssssiss', $paymentDate, $name, $price, $currency, $serviceName, $email, $mobileNo, $message);
+            
+            if ($stmt->execute()) {
+                echo json_encode(['success' => 'Enter pin on your phone to confirm transaction.']);
+            } else {
+                echo json_encode(['error' => 'Error: Unable to save data to database.']);
+                http_response_code(500); // Internal Server Error
+            }
 
-        // Set the cookie with the client data
-        setcookie(
-            'clientData',
-            $encodedClientData,
-            [
-                'expires' => time() + $cookie_lifetime,
-                'path' => $cookie_path,
-                'domain' => $cookie_domain,
-                'secure' => $cookie_secure,
-                'httponly' => $cookie_httponly,
-                'samesite' => 'Strict' // or 'Lax' if 'Strict' causes issues
-            ]
-        );
-
-        // Log stored client data for debugging (base64 encoded)
-        error_log('Stored client data in cookie: ' . $encodedClientData);
-
-        // Success in initiating collection
-        echo json_encode(['success' => 'Enter pin on your phone to confirm transaction.']);
+            $stmt->close();
+        } else {
+            echo json_encode(['error' => 'Error: Unable to prepare SQL statement.']);
+            http_response_code(500); // Internal Server Error
+        }
 
         exit();
     } else {

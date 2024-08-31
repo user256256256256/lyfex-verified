@@ -605,6 +605,17 @@ class PaymentOverlay extends HTMLElement {
 customElements.define('payment-overlay', PaymentOverlay)
 
 
+// wa-action-btn
+
+class WaActionBtn extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+         <a aria-label="Chat on WhatsApp" href="https://wa.me/+256779185563" target="_blank" class="btn btn-lg btn-primary rounded-circle wa-action-btn "><i class="bi bi-whatsapp"></i></a>
+        `
+    }
+}
+customElements.define('wa-action-btn', WaActionBtn)
+
 // site footer
 class SiteFooter extends HTMLElement {
     connectedCallback() {
