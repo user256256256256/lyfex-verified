@@ -1,1 +1,5 @@
-ErrorDocument 404 /lyfexafrica/error_404.html
+# ErrorDocument 404 /lyfex-africa-verified/error_404.html : use this for testing on xamp (local server).
+
+# For Live Server
+ErrorDocument 404 /lyfexafrica.com/error_404.html
+
