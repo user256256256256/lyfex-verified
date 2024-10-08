@@ -36,6 +36,7 @@ class SiteNav extends HTMLElement {
                     <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
                     <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                     <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://youtube.com/@lyfexafrica?si=Wolq4EjpeJjAvMcC="><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -71,6 +72,7 @@ class SiteNav extends HTMLElement {
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="faqs.html" class="dropdown-item">FAQs</a>
+                        <a href="media.html" class="dropdown-item">MEDIA</a>
                        <!--   <a href="blogs.html" class="dropdown-item">Blogs</a> -->
                     </div>
                 </div>
@@ -634,8 +636,10 @@ class SiteFooter extends HTMLElement {
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/company/lyfex-africa/"><i class="fab fa-linkedin-in"></i></a>
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://x.com/LyfexAfrica?t=5q9aZXUY3sdUq9WHDfNHzA&s=09"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://www.instagram.com/p/C8d67UloajH/?igsh=dWpmZDJmeG1sZng="><i class="fab fa-instagram"></i></a>
+                            <a target="_blank" class="btn btn-outline-light btn-social rounded-circle" href="https://youtube.com/@lyfexafrica?si=Wolq4EjpeJjAvMcC="><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
+
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Services</h5>
                         <a class="btn btn-link" href="service-one.html">Nature's Nuturers Program (NNP)</a>
