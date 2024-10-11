@@ -187,7 +187,8 @@ class WhyUsSection extends HTMLElement {
                 </div>
                 <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/children-wellness-4.JPG" style="object-fit: cover;" alt="">
+                        <!-- <img class="position-absolute img-fluid w-100 h-100" src="img/children-wellness-4.JPG" style="object-fit: cover;" alt=""> -->
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2CgYM4q9fiI?si=EC_SSVyvRGtKARPW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
