@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,18 +40,22 @@
 
 <body>
 
-    <!-- designed as template visit templates.js to edit  -->
-    <site-nav></site-nav>
-
-    <payment-page></payment-page>
-
-    <payment-overlay></payment-overlay>
-
-    <!-- wa-action-btn designed as template visit templates.js to edit-->
-    <wa-action-btn></wa-action-btn>
-
-    <!-- designed as template visit templates.js to edit -->
-    <site-footer></site-footer>
+    <!-- 404 Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
+                    <h1 class="display-1">404</h1>
+                    <h1 class="mb-4">!OOPs Page Not Found</h1>
+                    <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page ?</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="index.php">Go Back To Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 404 End -->
+        
 
     <!-- Template Javascript -->
     <script src="js/templates.js"></script>
@@ -61,12 +71,10 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- appointment js file -->
-    <script src="appointment/appointment.js"></script>
 
     <!-- main js -->
     <script src="js/main.js"></script>
-    <script src="payment/payment.js"></script>
+
 </body>
 
 </html>

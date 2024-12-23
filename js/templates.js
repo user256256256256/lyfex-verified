@@ -1,4 +1,10 @@
-// html templates 
+/*
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+*/
+
+// Custom templates 
 
 // nav template
 class SiteNav extends HTMLElement {
@@ -45,7 +51,7 @@ class SiteNav extends HTMLElement {
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img class="site-logo " src="img/Picture1.png" alt="">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -53,17 +59,17 @@ class SiteNav extends HTMLElement {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link ">About</a>
-                <a href="nutri-fintracy.html" class="nav-item nav-link ">LA-NutriFin</a>
+                <a href="index.php" class="nav-item nav-link">Home</a>
+                <a href="about.php" class="nav-item nav-link ">About</a>
+                <a href="nutri-fintracy.php" class="nav-item nav-link ">LA-NutriFin</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="service-one.html" class="dropdown-item">Nature's Nuturers Program (NNP)</a>
-                        <a href="service-two.html" class="dropdown-item">Parents's Joy Program (PJP)</a>
-                        <a href="service-three.html" class="dropdown-item">NutriFinTrancy</a>
-                        <a href="service-four.html" class="dropdown-item">NCD Management</a>
-                        <a href="service-five.html" class="dropdown-item">Tele Nutrition</a>
+                        <a href="service-one.php" class="dropdown-item">Nature's Nuturers Program (NNP)</a>
+                        <a href="service-two.php" class="dropdown-item">Parents's Joy Program (PJP)</a>
+                        <a href="service-three.php" class="dropdown-item">NutriFinTrancy</a>
+                        <a href="service-four.php" class="dropdown-item">NCD Management</a>
+                        <a href="service-five.php" class="dropdown-item">Tele Nutrition</a>
                         
 
                     </div>
@@ -71,16 +77,16 @@ class SiteNav extends HTMLElement {
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="faqs.html" class="dropdown-item">FAQs</a>
-                        <a href="media.html" class="dropdown-item">MEDIA</a>
-                       <!--   <a href="blogs.html" class="dropdown-item">Blogs</a> -->
+                        <a href="faqs.php" class="dropdown-item">FAQs</a>
+                        <a href="media.php" class="dropdown-item">MEDIA</a>
+                       <!--   <a href="blogs.php" class="dropdown-item">Blogs</a> -->
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <div class="d-flex">
-             <a href="appointment.html" class="btn-sm btn-primary rounded-0 py-4 px-lg-4 d-sm-block">Book Appointment<i class="fa fa-arrow-right ms-3"></i></a>
-             <a href="payment.html" class="btn-sm btn-secondary rounded-0 py-4 px-lg-4 d-sm-block">Make Payment<i class="fa fa-arrow-right ms-3"></i></a>
+             <a href="appointment.php" class="btn-sm btn-primary rounded-0 py-4 px-lg-4 d-sm-block">Book Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+             <a href="payment.php" class="btn-sm btn-secondary rounded-0 py-4 px-lg-4 d-sm-block">Make Payment<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </div>
     </nav>
@@ -106,10 +112,10 @@ class AboutUs extends HTMLElement {
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.html">About Us</a></p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="about.php">About Us</a></p>
                         <h1 class="mb-4">Get To Know Us!</h1>
                         <p>At Lyfex Africa, we are dedicated to empowering individuals and families across Africa to achieve optimal nutrition health and wellness through comprehensive nutrition therapy and nutrifintrancy services.</p>
-                        <p class="mb-4">Our mission is to provide accessible, personalized, and sustainable solutions that promote long-term health and well-being. <a href="about.html"> Read more...</a></p>
+                        <p class="mb-4">Our mission is to provide accessible, personalized, and sustainable solutions that promote long-term health and well-being. <a href="about.php"> Read more...</a></p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Experienced and Caring Team</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Commitment to Your Family's Health</p>
                         <p><i class="far fa-check-circle text-primary me-3"></i>Holistic Wellness Focus</p>
@@ -298,7 +304,7 @@ class AppointmentSection extends HTMLElement {
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.html">Appointment</a></p>
+                        <p class="d-inline-block border rounded-pill py-1 px-4"><a href="appointment.php">Appointment</a></p>
                         <h1 class="mb-4">Make An Appointment To Visit Our Specialist</h1>
                         <p class="mb-4">Fill in the information and you will recieve a confimation email if your appointment is confirmed. You can also contact us through our email or call us.</p>
                         <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
@@ -367,7 +373,7 @@ class AppointmentSection extends HTMLElement {
                                         <textarea class="form-control border-0" rows="5" id="message" placeholder="Short description of your health condition!" ></textarea>
                                     </div>
                                     <div>
-                                        <label class="text-primary" for="privacy-policies"><a href="privacy.html">Accept privacy policies </a></label>
+                                        <label class="text-primary" for="privacy-policies"><a href="privacy.php">Accept privacy policies </a></label>
                                         <input title="privacy-policies" type="checkbox" name="" id="privacy-policies">
                                     </div>
                                     <div class="col-12">
@@ -452,7 +458,7 @@ class NutriFinTracyServices extends HTMLElement {
                         </div>
                         <h4 class="mb-3">Budgeting for Nutrition</h4>
                         <p class="mb-4">Helping families create budgets that prioritize nutritious food choices. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -462,7 +468,7 @@ class NutriFinTracyServices extends HTMLElement {
                         </div>
                         <h4 class="mb-3">Smart Shopping Guidance</h4>
                         <p class="mb-4">Tips and strategies for making healthy, cost-effective food purchases. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -472,7 +478,7 @@ class NutriFinTracyServices extends HTMLElement {
                         </div>
                         <h4 class="mb-3">Savings Plans</h4>
                         <p class="mb-4">Designing savings programs specifically for nutritional needs to ensure long-term food security and health. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -482,7 +488,7 @@ class NutriFinTracyServices extends HTMLElement {
                         </div>
                         <h4 class="mb-3">Financial Wellness Education</h4>
                         <p class="mb-4">Providing tools and resources to help families make informed financial decisions related to their dietary habits. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
             </div>
@@ -643,24 +649,24 @@ class SiteFooter extends HTMLElement {
 
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Services</h5>
-                        <a class="btn btn-link" href="service-one.html">Nature's Nuturers Program (NNP)</a>
-                        <a class="btn btn-link" href="service-two.html">Parents's Joy Program (PJP)</a>
-                        <a class="btn btn-link" href="nutri-fintracy.html">LA-NutriFin</a>
-                        <a class="btn btn-link" href="service-four.html">NCD Management</a>
-                        <a class="btn btn-link" href="service-five.html">Tele Nutrition</a>
+                        <a class="btn btn-link" href="service-one.php">Nature's Nuturers Program (NNP)</a>
+                        <a class="btn btn-link" href="service-two.php">Parents's Joy Program (PJP)</a>
+                        <a class="btn btn-link" href="nutri-fintracy.php">LA-NutriFin</a>
+                        <a class="btn btn-link" href="service-four.php">NCD Management</a>
+                        <a class="btn btn-link" href="service-five.php">Tele Nutrition</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Quick Links</h5>
-                        <a class="btn btn-link" href="appointment.html">Appointment</a>
-                        <a class="btn btn-link" href="about.html">About Us</a>
-                        <a class="btn btn-link" href="privacy.html">privacy</a>
-                        <a class="btn btn-link" href="payment.html">Payment</a>
+                        <a class="btn btn-link" href="appointment.php">Appointment</a>
+                        <a class="btn btn-link" href="about.php">About Us</a>
+                        <a class="btn btn-link" href="privacy.php">privacy</a>
+                        <a class="btn btn-link" href="payment.php">Payment</a>
                         <a target="_blank" class="btn btn-link" href="https://webmail.lyfexafrica.com"> Web mailer</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-light mb-4">Lyfex-Africa</h5>
                         <p>Empowering Families and Nourishing Lives</p>
-                        <a href="index.html">
+                        <a href="index.php">
                             <img class="site-logo " src="img/Picture2.png" alt="site-logo">
                         </a>
                     </div>
@@ -670,10 +676,10 @@ class SiteFooter extends HTMLElement {
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="index.html">Lyfex Africa</a>, All Right Reserved.
+                            &copy; <a class="border-bottom" href="index.php">Lyfex Africa</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            Powered By <a class="border-bottom" href="https://eurosatgroup.com/">Eurosat Group</a>
+                           Nourishing Lives, Empowering Families
                         </div>
                     </div>
                 </div>

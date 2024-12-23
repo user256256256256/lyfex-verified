@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +49,7 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">FAQs</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
                     <li class="breadcrumb-item">resources</li>
                     <li class="breadcrumb-item text-primary active" aria-current="page">Faqs</li>
                 </ol>
@@ -196,3 +202,5 @@
     <script src="js/main.js"></script>
 
 </body>
+
+</html>

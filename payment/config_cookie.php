@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <?php
 // Set cookie parameters
 $cookie_lifetime = 40; // Lifetime of the cookie in seconds

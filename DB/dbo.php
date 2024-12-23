@@ -1,6 +1,12 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <?php
 
-// Database connection settings
+// Database connection settings --Settings are leveraged during testing
 $serverName = "DESKTOP-V3KV43E\\SQLEXPRESS";
 $connectionOptions = array(
     "Database" => "lyfex_africa",

@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,32 +39,26 @@
 </head>
 
 <body>
+
     <!-- designed as template visit templates.js to edit  -->
     <site-nav></site-nav>
 
-
     <!-- Page Header Start -->
-    <div class="container-fluid page-header-service-three py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">NutriFinTrancy</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Appointment</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Services</li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">NutriFinTrancy</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Appointment</li>
                 </ol>
             </nav>
         </div>
     </div>
     <!-- Page Header End -->
 
-    <nutri-services></nutri-services>
-
     <!-- appointment-section designed as template visit templates.js to edit  -->
     <appointment-section></appointment-section>
-
-    <!-- testimonial-section designed as template visit templates.js to edit  -->
-    <testimonial-section></testimonial-section>
 
     <!-- wa-action-btn designed as template visit templates.js to edit-->
     <wa-action-btn></wa-action-btn>
@@ -81,14 +81,11 @@
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    
     <!-- appointment js file -->
-    <script src="appointment/jqBootstrapValidation.min.js"></script>
     <script src="appointment/appointment.js"></script>
 
     <!-- main js -->
     <script src="js/main.js"></script>
-
 </body>
 
 </html>

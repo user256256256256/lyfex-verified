@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,23 +39,38 @@
 </head>
 
 <body>
+    <!-- designed as template visit templates.js to edit  -->
+    <site-nav></site-nav>
 
-    <!-- 404 Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                    <h1 class="display-1">404</h1>
-                    <h1 class="mb-4">!OOPs Page Not Found</h1>
-                    <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page ?</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="index.html">Go Back To Home</a>
-                </div>
-            </div>
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header-service-three py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">NutriFinTrancy</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
+                    <li class="breadcrumb-item">Services</li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">NutriFinTrancy</li>
+                </ol>
+            </nav>
         </div>
     </div>
-    <!-- 404 End -->
+    <!-- Page Header End -->
+
+    <nutri-services></nutri-services>
+
+    <!-- appointment-section designed as template visit templates.js to edit  -->
+    <appointment-section></appointment-section>
+
+    <!-- testimonial-section designed as template visit templates.js to edit  -->
+    <testimonial-section></testimonial-section>
+
+    <!-- wa-action-btn designed as template visit templates.js to edit-->
+    <wa-action-btn></wa-action-btn>
         
+    <!-- designed as template visit templates.js to edit -->
+    <site-footer></site-footer>
 
     <!-- Template Javascript -->
     <script src="js/templates.js"></script>
@@ -65,6 +86,11 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    
+    <!-- appointment js file -->
+    <script src="appointment/jqBootstrapValidation.min.js"></script>
+    <script src="appointment/appointment.js"></script>
 
     <!-- main js -->
     <script src="js/main.js"></script>

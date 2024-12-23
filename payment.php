@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,14 +45,11 @@
 
     <payment-page></payment-page>
 
-    <nutri-services></nutri-services>
-
-
     <payment-overlay></payment-overlay>
 
     <!-- wa-action-btn designed as template visit templates.js to edit-->
     <wa-action-btn></wa-action-btn>
-        
+
     <!-- designed as template visit templates.js to edit -->
     <site-footer></site-footer>
 

@@ -1,7 +1,14 @@
-<!DOCTYPE ht>
-<ht lang="en">
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <title>lyfex africa</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -36,7 +43,6 @@
     <!-- designed as template visit templates.js to edit  -->
     <site-nav></site-nav>
 
-    
     <!-- Header Start -->
     <div class="container-fluid header bg-primary p-0 mb-5">
         <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
@@ -132,7 +138,7 @@
                         <h5 class="mb-3">Nuture's Nuturers Program (NNP)</h5>
                         <p class="mb-4">Tailored nutritional support for mothers during and after pregnancy not forgetting those expecting to get pregnant.</p>
 
-                        <a class="btn" href="appointment.html"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
 
                     </div>
                 </div>
@@ -147,7 +153,7 @@
                         <h5 class="mb-3">Parents's Joy Program (PJP)</h5>
                         <p class="mb-4">Building a foundation of health for the youngest members of your family.</p>
                       
-                        <a class="btn" href="appointment.html"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -158,7 +164,7 @@
                         <h5 class="mb-3">NutriFinTrancy</h5>
                         <p class="mb-4">Access a wealth of resources to deepen your understanding of nutrition, welling being and Nutri-Finance.</p>
 
-                        <a class="btn" href="appointment.html"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -168,7 +174,7 @@
                         </div>
                         <h5 class="mb-3">NCD Management</h5>
                         <p class="mb-4">Non-Communicable Disease (NCD) Management program focuses on the prevention, management, and support of chronic diseases such as diabetes, obesity, cardiovascular diseases, and more.</p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -179,7 +185,7 @@
                         <h5 class="mb-3">Tele Nutrition</h5>
                         <p class="mb-4">A financial wellness program focused on budgeting for nutrition and general health needs, smart shopping guidance, and savings planning for families.</p>
 
-                        <a class="btn" href="appointment.html"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-arrow-right text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
             </div>
@@ -228,3 +234,5 @@
     <script src="js/main.js"></script>
 
 </body>
+
+</html>

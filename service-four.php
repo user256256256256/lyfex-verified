@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +49,7 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">NCD Management</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
                     <li class="breadcrumb-item">Services</li>
                     <li class="breadcrumb-item text-primary active" aria-current="page">NCD Management</li>
                 </ol>
@@ -67,7 +73,7 @@
                         </div>
                         <h4 class="mb-3">Chronic Disease Education</h4>
                         <p class="mb-4">Providing information on the prevention and management of NCDs. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -77,7 +83,7 @@
                         </div>
                         <h4 class="mb-3">Personalized Care Plans</h4>
                         <p class="mb-4">Developing individualized plans to manage and mitigate the impact of chronic diseases.</p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -87,7 +93,7 @@
                         </div>
                         <h4 class="mb-3">Nutrition and Lifestyle Counseling</h4>
                         <p class="mb-4">Offering guidance on dietary changes, physical activity, and lifestyle modifications to support health. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -97,7 +103,7 @@
                         </div>
                         <h4 class="mb-3">Regular Monitoring and Support</h4>
                         <p class="mb-4">Continuous monitoring of health markers and regular follow-ups to ensure effective management of conditions.</p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -107,7 +113,7 @@
                         </div>
                         <h4 class="mb-3">Collaborative Care</h4>
                         <p class="mb-4">Working with healthcare providers to offer integrated care for individuals with NCDs.</p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,9 @@
+<!-- 
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +49,7 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">Nature's Nuturers Program (NNP)</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
                     <li class="breadcrumb-item">Services</li>
                     <li class="breadcrumb-item text-primary active" aria-current="page">Nature's Nuturers Program (NNP)</li>
                 </ol>
@@ -68,7 +74,7 @@
                         </div>
                         <h4 class="mb-3">Personalized Nutrition Plans</h4>
                         <p class="mb-4">Tailored dietary recommendations to meet the specific nutritional needs of mothers.</p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -78,7 +84,7 @@
                         </div>
                         <h4 class="mb-3">Exercise Guidance</h4>
                         <p class="mb-4">Collaboration with exercise experts to design safe and effective workout routines. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -88,7 +94,7 @@
                         </div>
                         <h4 class="mb-3">Nutrition Education and Counseling</h4>
                         <p class="mb-4">Expert advice to help mothers develop and maintain healthy eating habits. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -98,7 +104,7 @@
                         </div>
                         <h4 class="mb-3">Management of Nutritional Conditions</h4>
                         <p class="mb-4">Support for managing conditions like gestational diabetes, anemia, and more. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -108,7 +114,7 @@
                         </div>
                         <h4 class="mb-3">Treatment of Nutritional Deficiencies </h4>
                         <p class="mb-4">Addressing and correcting nutrient deficiencies to ensure optimal health for both mother and baby. </p>
-                        <a class="btn" href="appointment.html"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
+                        <a class="btn" href="appointment.php"><i class="fa fa-plus text-primary me-3"></i>Book now</a>
                     </div>
                 </div>
             </div>
