@@ -1,3 +1,9 @@
+/*
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+*/
+
 CREATE TABLE payments_intiated (
     id INT IDENTITY(1,1) PRIMARY KEY,   -- A unique identifier for each record, auto-incremented
     paymentDate DATE NOT NULL,          -- Date of payment

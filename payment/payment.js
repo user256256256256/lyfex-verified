@@ -1,3 +1,9 @@
+/*
+Copyright (c) 2024 Lyfex Africa. All rights reserved.
+This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+Author: Engineer Ibn Muzamir.
+*/
+
 $(document).ready(function() {
     // Accessing input fields by their IDs
     var $paymentDate = $('#payment-date');

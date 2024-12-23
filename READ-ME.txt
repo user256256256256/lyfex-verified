@@ -1,6 +1,0 @@
-This is a website designed for lyfex africa company by eurosat group of companies
-
-Data in project font-end: html, css, javascript, jquery, bootstrap, scss flat icon 
-fonts and icomoon fonts back-end: php. 
-
-
