@@ -679,7 +679,7 @@ class SiteFooter extends HTMLElement {
                             &copy; <a class="border-bottom" href="index.php">Lyfex Africa</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            Powered By <a class="border-bottom" href="https://eurosatgroup.com/">Eurosat Group</a>
+                           Nourishing Lives, Empowering Families
                         </div>
                     </div>
                 </div>
