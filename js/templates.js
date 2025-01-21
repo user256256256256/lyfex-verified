@@ -516,7 +516,7 @@ class Paymentpage extends HTMLElement {
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center mb-3">
-                            <span class="text-secondary fs-4">30,000UGX</span>
+                            <span class="text-secondary fs-4">50,000UGX</span>
                         </div>
                         <h4 class="mb-3">(Tele Nutrition) Initial Online Consultation Session</h4>
                         <p class="mb-4">Book a 30-minute online consultation to discuss your needs with a nutritionist. 
