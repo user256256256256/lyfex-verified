@@ -126,6 +126,7 @@ Author: Engineer Ibn Muzamir.
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <div class="text-center">
                 <img src="img/LyfexAfricaPurple.png"  class=" mb-2" alt="">
+                <p class="mb-4 pb-2">Lyfex Care is the flagship product of Lyfex Africa designed to provide accessible, preventive healthcare and wellness support to communities in a way that fosters trust, empowers families, and strengthens well-being through an affordable, tech-enabled subscription model.</p>
             </div>
         </div>
         <!-- Drink more water challenge 2025 -->
@@ -135,12 +136,10 @@ Author: Engineer Ibn Muzamir.
                 <div class="row g-0 mx-lg-0">
                     <div class="col-lg-6 px-2 py-5 wow fadeIn " data-wow-delay="0.1s" style="font-size: 14px;">
                         <div class="ps-lg-0">
-                            <!-- <p class="d-inline-block border rounded-pill text-light py-1 px-4">Features</p> -->
-                            <button class="text-white mb-4  btn btn-secondary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScJzlOU-8nyaiB2616S5Glp6uNmCzJS-obVW1_7CaVKWomEPQ/viewform?usp=preview', '_blank')">Join Lyfex Care Community Now! </button>
-
-                            <h1 class="text-white mb-4">Why Join LyfexCare</h1>
-                            <p class="text-white mb-4 pb-2">Lyfex Care is the flagship product of Lyfex Africa designed to provide accessible, preventive healthcare and wellness support to communities in a way that fosters trust, empowers families, and strengthens well-being through an affordable, tech-enabled subscription model.</p>
-                            
+                            <div class="text-center mb-4">
+                               <button class="text-white mb-4  btn btn-secondary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScJzlOU-8nyaiB2616S5Glp6uNmCzJS-obVW1_7CaVKWomEPQ/viewform?usp=preview', '_blank')">Join Lyfex Care Community Now! </button>
+                            </div> 
+                            <h1 class="text-white my-4">Why Join LyfexCare</h1>                            
                             <div class="row g-4">
                                 <div class="col-6 text-left">
                                     <div class="d-flex align-items-center">
