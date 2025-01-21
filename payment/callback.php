@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode($input, true);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
-        echo json_encode(['error' => 'Invalid JSON from the request, Transaction Status: Not known, contact support']);
+        echo json_encode(['error' => 'Invalid response from the request, Transaction Status: Not known, contact support']);
         http_response_code(400);
         exit();
     }

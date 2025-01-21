@@ -1,10 +1,8 @@
-<!-- 
-Copyright (c) 2024 Lyfex Africa. All rights reserved.
-This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
-Author: Engineer Ibn Muzamir.
--->
-
 <?php
+// js config
+// Copyright (c) 2024 Lyfex Africa. All rights reserved.
+// This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
+// Author: Engineer Ibn Muzamir.
 
 require_once '../DB/dbo.php'; // Database configuration
 
