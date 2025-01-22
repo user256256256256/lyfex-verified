@@ -135,12 +135,13 @@ Author: Engineer Ibn Muzamir.
             <div class="container feature px-lg-0">
                 <div class="row g-0 mx-lg-0">
                     <div class="col-lg-6 px-2 py-5 wow fadeIn " data-wow-delay="0.1s" style="font-size: 14px;">
-                        <div class="ps-lg-0">
-                            <div class="text-center mb-4">
-                               <button class="text-white mb-4  btn btn-secondary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScJzlOU-8nyaiB2616S5Glp6uNmCzJS-obVW1_7CaVKWomEPQ/viewform?usp=preview', '_blank')">Join Lyfex Care Community Now! </button>
-                            </div> 
+                        <div class="p-lg-5 ps-lg-5">
+                            <a class="d-inline-block border cursor-pointer rounded-pill text-light py-3 px-4" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScJzlOU-8nyaiB2616S5Glp6uNmCzJS-obVW1_7CaVKWomEPQ/viewform?usp=preview', '_blank')">JOIN COMMUNITY</a>
+                            <!-- <div class="text-center mb-4">
+                               <button class="text-white mb-4  btn-lg btn-secondary" >Join Lyfex Care Community Now! </button>
+                            </div>  -->
                             <h1 class="text-white my-4">Why Join LyfexCare</h1>                            
-                            <div class="row g-4">
+                            <div class="row g-4 ">
                                 <div class="col-6 text-left">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
@@ -181,7 +182,7 @@ Author: Engineer Ibn Muzamir.
                                         </div>
                                         <div class="ms-4">
                                             <p class="text-white mb-2 text-left">Affordable</p>
-                                            <h5 class="text-white mb-0">Membership & Subscription</h5>
+                                            <h5 class="text-white mb-0">Membership Packages</h5>
                                         </div>
                                     </div>
                                 </div>
