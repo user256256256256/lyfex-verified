@@ -4,10 +4,15 @@
 // This website is licensed under the Lyfex Africa terms of use. Unauthorized copying or distribution is prohibited.
 // Author: Engineer Ibn Muzamir.
 
+// Include the connection script
+include('../DB/dbo.php');  // Adjust the path as necessary
+
 header('Content-Type: application/json');
 
 if (!empty($_POST)) {
-    $clientName = $_POST['clientName'];
+    // Retrieve form data
+    $clientFirstName = $_POST['clientFirstName'];
+    $clientLastName = $_POST['clientLastName'];
     $clientEmail = $_POST['clientEmail'];
     $clientMobileContact = $_POST['clientMobileContact'];
     $clientAddress = $_POST['clientAddress'];
@@ -18,13 +23,8 @@ if (!empty($_POST)) {
     $clientMessage = $_POST['clientMessage'];
     $privacyPolicy = $_POST['privacyPolicy'];
 
-    if (empty($clientName) ||
-        empty($clientEmail) ||
-        empty($clientMobileContact) ||
-        empty($clientAddress) ||
-        empty($clientAge) ||
-        empty($clientScheduledTime) ||
-        empty($clientMessage)) {
+    // Validation
+    if (empty($clientFirstName) || empty($clientLastName) || empty($clientEmail) || empty($clientMobileContact) || empty($clientAddress) || empty($clientAge) || empty($clientScheduledTime) || empty($clientMessage)) {
         echo json_encode(['error' => 'Fill in all fields!']);
         exit();
     }
@@ -44,11 +44,9 @@ if (!empty($_POST)) {
         exit();
     }
 
-    if (!empty($clientWhContact)) {
-        if (!is_numeric($clientWhContact)) {
-            echo json_encode(['error' => 'Invalid whatsapp number!']);
-            exit();
-        }
+    if (!empty($clientWhContact) && !is_numeric($clientWhContact)) {
+        echo json_encode(['error' => 'Invalid whatsapp number!']);
+        exit();
     }
 
     $wordCount = str_word_count($clientMessage);
@@ -57,24 +55,46 @@ if (!empty($_POST)) {
         exit();
     }
 
-    $to = 'info@lyfexafrica.com';
-    $subject = "New Appointment From: $clientName";
-    $message = "
-    Client Name: $clientName
-    Client Email: $clientEmail
-    Client Mobile Contact: $clientMobileContact
-    Client Address: $clientAddress
-    Client WhatsApp Contact: $clientWhContact
-    Client Age: $clientAge
-    Client Scheduled Time: $clientScheduledTime
-    Client Lead Location: $clientLeadLocation
+    // Prepare the SQL INSERT query with GUID
+    $sql = "INSERT INTO [dbo].[OnlineApplicants]
+                ([Id], [FirstName], [LastName], [Email], [MobilePhoneNo], [Address], [Age], [Reason], [PreferredSchedule], [HowDidYouHearAboutUs], [AcceptPrivacyPolicies], [CreatedDate])
+            VALUES
+                (NEWID(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, GETDATE())"; // NEWID() generates a new GUID for the Id field
     
-    Client Message: $clientMessage
-    Privacy Policy Accepted: " . ($privacyPolicy ? 'Yes' : 'No');
-    
-    $headers = "From: $clientEmail\r\n";
+    // Set the parameters for the query
+    $params = array(
+        $clientFirstName, 
+        $clientLastName, 
+        $clientEmail, 
+        $clientMobileContact, 
+        $clientAddress, 
+        $clientAge, 
+        $clientMessage, 
+        $clientScheduledTime, 
+        $clientLeadLocation, 
+        ($privacyPolicy === 'true') ? 1 : 0  // Convert 'true'/'false' to bit (1 or 0)
+    );
 
-    // Attempt to send the main email
+    // Prepare and execute the query
+    $stmt = sqlsrv_query($conn, $sql, $params);
+
+    if ($stmt === false) {
+        die(print_r(sqlsrv_errors(), true));
+    }
+
+    // Send the success response
+    echo json_encode(['success' => 'Application submitted successfully!']);
+
+    // Send email notification
+    $to = 'info@lyfexafrica.com';  // The email address of the admin
+    $subject = "New Appointment";  // Simplified subject
+    $message = "A new appointment has been requested. View Medisat for more information.";
+
+    $headers = "From: no-reply@lyfexafrica.com\r\n";  // Using a no-reply email for sending
+    $headers .= "Reply-To: no-reply@lyfexafrica.com\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    // Attempt to send the email
     try {
         $mailSent = mail($to, $subject, $message, $headers);
 
@@ -82,16 +102,17 @@ if (!empty($_POST)) {
             throw new Exception('Failed to send email.');
         }
 
-        echo json_encode(['success' => 'Mail received successfully!']);
-        exit();
-
     } catch (Exception $e) {
-        echo json_encode(['error' => 'An error occurred: ' . $e->getMessage()]);
+        // Error in email sending
+        echo json_encode(['error' => 'An error occurred while sending the email: ' . $e->getMessage()]);
         error_log('Error sending email: ' . $e->getMessage());
-        exit();
     }
 
+    // Close the connection
+    sqlsrv_close($conn);
+    
 } else {
     echo json_encode(['error' => 'No POST data received.']);
     exit();
 }
+?>

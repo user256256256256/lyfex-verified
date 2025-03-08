@@ -11,15 +11,19 @@ $(document).ready(function() {
 
         var $statusMessage = $('#status-message');
 
+        // Set the status message to "sending..."
+        $statusMessage.addClass('show').removeClass('alert-success alert-danger').text('Sending...');
+
         // Validate Message Word Count
 
         // Prepare Form Data
         var params = new URLSearchParams({
-            clientName: $('#name').val().trim(),
+            clientFirstName: $('#firstName').val().trim(),
+            clientLastName: $('#lastName').val().trim(),
             clientEmail: $('#email').val().trim(),
-            clientMobileContact: $('#subject').val().trim(),
+            clientMobileContact: $('#tel').val().trim(),
             clientAddress: $('#address').val().trim(),
-            clientWhContact: $('#wh-contact').val().trim(),
+            clientWhContact: $('#wh-tel').val().trim(),
             clientAge: $('#age').val().trim(),
             clientScheduledTime: $('#schedule').val(),
             clientLeadLocation: $('#lead-location').val(),
@@ -52,7 +56,7 @@ $(document).ready(function() {
         })
         .catch(error => {
             $statusMessage.addClass('show')
-            $statusMessage.removeClass('alert-success').addClass('alert-danger').text('An error occurred. Contact support')
+            $statusMessage.removeClass('alert-success').addClass('alert-danger').text('An error occurred. Contact support');
             console.error('Error:', error);
         });
     });

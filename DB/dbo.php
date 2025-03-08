@@ -6,12 +6,13 @@ Author: Engineer Ibn Muzamir.
 
 <?php
 
-// Database connection settings --Settings are leveraged during testing
-$serverName = "DESKTOP-V3KV43E\\SQLEXPRESS";
+// Database connection settings
+$serverName = "medisaterp.lyfexafrica.com";  // Your database server address
 $connectionOptions = array(
-    "Database" => "lyfex_africa",
-    "Uid" => "sa",
-    "PWD" => "1234"
+    "Database" => "MedisatConnection", // Database name
+    "Uid" => "adminMedisatERP",        // Database username
+    "PWD" => "Planchinobo256",         // Database password
+    "TrustServerCertificate" => true   // Trust the server certificate
 );
 
 // Establishes the connection
@@ -26,3 +27,4 @@ echo json_encode(["success", "Connection successful!"]);
 
 // Close the connection
 // sqlsrv_close($conn);
+?>
