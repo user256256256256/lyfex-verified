@@ -14,6 +14,9 @@ $(document).ready(function() {
         var senderMessage = $('#message').val().trim();
         var statusMessage = $('#status-message');
 
+        // Set the status message to "sending..."
+        statusMessage.addClass('show').removeClass('alert-success alert-danger').text('Sending...');
+
         var params = new URLSearchParams();
         params.append('senderName', senderName);
         params.append('senderEmail', senderEmail);
