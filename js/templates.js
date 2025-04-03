@@ -353,15 +353,16 @@ class AppointmentSection extends HTMLElement {
                                     <input type="text" class="form-control border-0" id="age" placeholder="Age"  style="height: 55px;">
                                 </div>
                                 <div class="col-6 col-sm-6 control-group">
-                                    <label for="Schedule">Choose Prefered Schedule:</label>
+                                    <label for="Schedule">Choose Preferred Schedule:</label>
                                     <select title="schedule" class="form-control border-0" name="Schedule" id="schedule" style="height: 55px;">
                                         <option value=""></option> 
-                                        <option value="Monday, 9:00am-11am">Monday, 9:00am-11:00am</option>
-                                        <option value="Monday, 2:00pm-4:00pm">Monday, 2:00pm-4:00pm</option>
-                                        <option value="Tuesday, 9:00am-11am">Tuesday, 9:00am-11:00am</option>
-                                        <option value="Tuesday, 2:00pm-4:00pm">Tuesday, 2:00pm-4:00pm</option>                                               
+                                        <option value="2025-04-06 09:00:00">Monday, 9:00am-11:00am</option>
+                                        <option value="2025-04-06 14:00:00">Monday, 2:00pm-4:00pm</option>
+                                        <option value="2025-04-07 09:00:00">Tuesday, 9:00am-11:00am</option>
+                                        <option value="2025-04-07 14:00:00">Tuesday, 2:00pm-4:00pm</option>                                               
                                     </select>
                                 </div>
+
                                 <div class="col-6 col-sm-6 control-group">
                                     <label for="leads">Where did you hear about us:</label>
                                     <select title="leads" class="form-control border-0" name="Schedule" id="lead-location" style="height: 55px;">
