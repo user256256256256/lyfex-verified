@@ -50,7 +50,7 @@ The **Lyfex Africa** website is designed to provide information about the compan
 2. **Install Dependencies**:
    The project uses a variety of libraries and frameworks, but there is no specific package manager setup in this repository. You'll need to manually download and include the libraries in the appropriate folders.
 
-3. **Server Setup**:
+3. **Server Local Setup**:
    Since this project uses PHP on the back-end, you will need to set up a local server:
    - Install XAMPP or MAMP to run the PHP files.
    - Place the cloned project in the `htdocs` folder of your local server.
