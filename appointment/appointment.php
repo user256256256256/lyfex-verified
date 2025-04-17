@@ -85,16 +85,26 @@ if (!empty($_POST)) {
     // Send the success response
     echo json_encode(['success' => 'Application submitted successfully!']);
 
-    // Send email notification
+   // Send email notification
     $to = 'info@lyfexafrica.com';  // The email address of the admin
     $subject = "New Appointment";  // Simplified subject
-    $message = "A new appointment has been requested. View Medisat for more information.";
+    $message = "A new appointment has been requested. Here are the details:\n\n"
+            . "First Name: $clientFirstName\n"
+            . "Last Name: $clientLastName\n"
+            . "Email: $clientEmail\n"
+            . "Mobile Contact: $clientMobileContact\n"
+            . "Address: $clientAddress\n"
+            . "Age: $clientAge\n"
+            . "Message: $clientMessage\n"
+            . "Scheduled Time: $clientScheduledTime\n"
+            . "Lead Location: $clientLeadLocation\n"
+            . "Privacy Policy Accepted: " . (($privacyPolicy === 'true') ? 'Yes' : 'No') . "\n\n"
+            . "View Medisat for more information.";
 
     $headers = "From: no-reply@lyfexafrica.com\r\n";  // Using a no-reply email for sending
     $headers .= "Reply-To: no-reply@lyfexafrica.com\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    // Attempt to send the email
     try {
         $mailSent = mail($to, $subject, $message, $headers);
 
@@ -107,6 +117,7 @@ if (!empty($_POST)) {
         echo json_encode(['error' => 'An error occurred while sending the email: ' . $e->getMessage()]);
         error_log('Error sending email: ' . $e->getMessage());
     }
+
 
     // Close the connection
     sqlsrv_close($conn);
